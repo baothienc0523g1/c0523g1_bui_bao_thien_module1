@@ -1,0 +1,9 @@
+BEGIN
+	N la so ngau nhien trong khoang tu 0-9
+	Nhap vao M
+	IF (N==M)
+		DISPLAY "du doan dung"
+	ELSE 
+		DISPLAY "du doan sai"
+	ENDIF
+END
