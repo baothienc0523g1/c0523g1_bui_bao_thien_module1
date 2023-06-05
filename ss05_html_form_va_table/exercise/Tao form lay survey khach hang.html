@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tao form lay survey khach hang</title>
+</head>
+<body>
+
+<h2>Market Research Survey</h2>
+<h3>Please take a few moments to complete this satisfaction survey.</h3>
+<hr>
+<form>
+    <h3>What is your age range?</h3>
+
+    <select style="width: 500px;">
+        <option value=""> 18-24</option>
+        <option>25-34</option>
+        <option>35-50</option>
+        <option>50+</option>
+    </select>
+
+    <h3>What is your yearly income range?</h3>
+    <select style="width: 500px;">
+        <option value="">$0 - $25 000</option>
+        <option>$25 000 - $50 000</option>
+        <option>$50 000 - $100 000</option>
+        <option>$100 000+</option>
+    </select>
+    <h3>Gender Identity</h3>
+    <label><input type="checkbox" name="gender" value="Male"/>Male</label><br>
+    <label><input type="checkbox" name="gender" value="Female"/>Female</label><br>
+    <label><input type="checkbox" name="gender" value="Nonbinary"/>Nonbinary</label><br>
+    <label><input type="checkbox" name="gender" value="Other"/>Other</label>
+
+    <h3>Which of the following products have your purchased in the last 2 months. Please check all that apply.</h3>
+    <label><input type="checkbox" name="product" value="product1"/> Product 1 </label>
+    <label><input type="checkbox" name="product" value="product2"/> Product 2 </label>
+    <label><input type="checkbox" name="product" value="product3"/> Product 3 </label>
+
+    <h3>How often would you use our new product?</h3>
+
+    <label><input type="checkbox" name="howoften" value="Daily"/> Dayli </label>
+    <label><input type="checkbox" name="howoften" value="Weekly"/> Weekly </label>
+    <label><input type="checkbox" name="howoften" value="Monthly"/> Monthly </label>
+    <h3>What would you pay for the new product?</h3>
+    $<input type="number" style="width:50px"> . <input type="number" style="width: 15px"/>
+
+    <h3>What features would you like to see in the new product.</h3>
+
+    <textarea cols="160" rows="8"></textarea>
+    <h4>Please rate your level of agreement with the following statements.</h4>
+    <table border="1">
+        <tr>
+            <td></td>
+            <td>Strongly Disagree</td>
+            <td>Disagree</td>
+            <td>Agree</td>
+            <td>Strongly Agree</td>
+        </tr>
+        <tr>
+            <th>Our products are priced fairly.</th>
+            <label>
+                <td><input type="checkbox" name="1" value="1"</td>
+                1</label>
+            <label>
+                <td><input type="checkbox" name="1" value="2"</td>
+                2</label>
+            <label>
+                <td><input type="checkbox" name="1" value="3"</td>
+                3</label>
+            <label>
+                <td><input type="checkbox" name="1" value="4"</td>
+                4</label>
+        </tr>
+        <tr>
+            <th>Our products are high quality.</th>
+            <label>
+                <td><input type="checkbox" name="1" value="1"</td>
+                1</label>
+            <label>
+                <td><input type="checkbox" name="1" value="2"</td>
+                2</label>
+            <label>
+                <td><input type="checkbox" name="1" value="3"</td>
+                3</label>
+            <label>
+                <td><input type="checkbox" name="1" value="4"</td>
+                4</label>
+        </tr>
+        <tr>
+            <th>You would recommend our product to a friend or cowworker</th>
+            <label>
+                <td><input type="checkbox" name="1" value="1"</td>
+                1</label>
+            <label>
+                <td><input type="checkbox" name="1" value="2"</td>
+                2</label>
+            <label>
+                <td><input type="checkbox" name="1" value="3"</td>
+                3</label>
+            <label>
+                <td><input type="checkbox" name="1" value="4"</td>
+                4</label>
+        </tr>
+    </table>
+    <input type="submit" value="Submit"/>
+</form>
+
+</body>
+</html>
