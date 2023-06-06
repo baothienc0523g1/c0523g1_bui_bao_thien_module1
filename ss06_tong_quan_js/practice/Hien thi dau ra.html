@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hien thi dau ra</title>
+</head>
+<body>
+
+
+<!--hien thi ket qua bang ham alert-->
+<button type="button" onclick="showMessage()" ;>Bam vao day</button>
+<script>
+    function showMessage() {
+        alert("seen chao`!")
+    }
+</script>
+<!--Hien thi ket qua bang the HTML-->
+
+
+<div id="messageDiv"></div>
+<button type="button" onclick="showMessage()">Bam vao day!!</button>
+<script>
+    function showMessage() {
+        document.getElementById("messageDiv").innerHTML = "xin trao`!"
+    }
+</script>
+
+<!--Hien thi ket qua bang Console-->
+<button type="button" onclick="HienTinNhan()">Bam vao cho nay</button>
+<script>
+    function HienTinNhan() {
+        console.log("Xin chao!!!")
+    }
+</script>
+
+</body>
+</html>
