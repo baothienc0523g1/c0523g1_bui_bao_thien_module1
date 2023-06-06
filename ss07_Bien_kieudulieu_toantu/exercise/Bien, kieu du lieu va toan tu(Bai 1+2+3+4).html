@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bien, kieu du lieu va toan tu</title>
+</head>
+<body>
+
+<!--Bai 1: Nhap diem va tinh diem trung binh-->
+
+<script>
+    let VatLy
+    let HoaHoc
+    let SinhHoc
+
+    VatLy = prompt("Nhap diem Ly")
+    HoaHoc = prompt("Nhap diem Hoa")
+    SinhHoc = prompt("Nhap diem Sinh")
+
+    Ly = parseInt(VatLy)
+    Hoa = parseInt(HoaHoc)
+    Sinh = parseInt(SinhHoc)
+
+
+    let TongDiem = (Ly + Hoa + Sinh)
+    let DTB = TongDiem / 3
+    document.write("Diem trung binh la:   " + DTB)
+
+</script>
+
+<!--Bai 2: Chuyen doi nhiet do-->
+<script>
+
+    let NhapNhietDoCelsius
+
+    NhapNhietDoCelsius = prompt("Nhap nhiet do o thang Celsius:")
+    Celsius = parseInt(NhapNhietDoCelsius)
+
+    let doF = [(9 * Celsius) / 5 + 32]
+    document.write("Nhiet do o thang do Fahrenheit la: " + doF)
+
+
+</script>
+
+<!--Bai 3: Viet chuong trinh tinh dien tich hinh tron-->
+<script>
+    let BanKinh
+    let i=Math.PI
+
+
+    BanKinh = prompt("Nhap vao ban kinh hinh tron")
+
+    BK = parseInt(BanKinh)
+    let S = [(BK * BK) * i]
+
+    alert("Dien tich hinh tron la: " + S)
+</script>
+
+<!--Bai 4: Viet chuong trinh tinh chu vi hinh tron-->
+<script>
+    let DuongKinh
+    let i=Math.PI
+
+    DuongKinh=prompt("Nhap vao duong kinh hinh tron")
+
+    DK = parseInt(DuongKinh)
+    let P = DK*i
+
+    alert("Chu vi hinh tron nay la: "+P)
+
+
+</script>
+
+</body>
+</html>
