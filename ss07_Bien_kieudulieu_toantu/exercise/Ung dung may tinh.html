@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+</head>
+<body>
+<h1>Calculator</h1>
+<form>
+    <input type="number" id="a" placeholder="Nhap vao so thu nhat" style="width: 150px">
+    <input type="number" id="b" placeholder="Nhap vao so thu hai" style="width: 150px">
+</form>
+<button onclick="Cong()" type="button" value="Cong">Cong</button>
+<button onclick="Tru()" type="button" value="Tru">Tru</button>
+<button onclick="Nhan()" type="button" value="Nhan">Nhan</button>
+<button onclick="Chia()" type="button" value="Chia">Chia</button>
+
+
+</body>
+<script>
+    function Cong() {
+        A = parseInt(document.getElementById("a").value)
+        B = parseInt(document.getElementById("b").value)
+        C = A + B
+        document.getElementById("Ket qua la: " + C)
+    }
+    function Tru() {
+        A = parseInt(document.getElementById("a").value)
+        B = parseInt(document.getElementById("b").value)
+        T = A - B
+        document.write("Ket qua la: " +T)
+    }
+    function Nhan() {
+        A = parseInt(document.getElementById("a").value)
+        B = parseInt(document.getElementById("b").value)
+        N = A * B
+        document.write("Ket qua la: " + N)
+    }
+    function Chia() {
+        A = parseInt(document.getElementById("a").value)
+        B = parseInt(document.getElementById("b").value)
+        S = A / B
+        document.write("Ket qua la: " + S)
+    }
+</script>
+
+</html>
