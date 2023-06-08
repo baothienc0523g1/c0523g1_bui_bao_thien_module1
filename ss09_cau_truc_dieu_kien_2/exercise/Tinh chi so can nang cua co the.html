@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh chi so BMI</title>
+</head>
+<body>
+<h1>Tinh chi so BMI!</h1>
+<script>
+  let weight = prompt("Put your weitght here(kg): ", "");
+  let height = prompt("Put your height here(m): ","");
+  let BMI = (weight / Math.pow(height,2));
+
+  if (BMI < 18.4)
+    {
+      alert("Underweight");
+    }
+    else if (BMI < 24.9) {
+      alert("Normal");
+    }
+    else if (BMI < 29.9) {
+      alert("Overweight");
+    } else {
+      alert("Obese");
+    }
+
+
+</script>
+</body>
+</html>

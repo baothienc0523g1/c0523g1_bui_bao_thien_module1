@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>su kien chuot</title>
+</head>
+<body>
+<form>
+
+<img id="myImage.png" src="../../images.jpg" height="220" width="220"/>
+<p>Click button below to move the image to right</p>
+<input type="button" onclick="moveRight()" value="Click Me" />
+</form>
+<script>
+
+    let img = null;
+    img = document.getElementById('myImage.png');
+
+    function init() {
+        img = document.getElementById('myImage.png');
+        img.style.position = 'relative';
+        img.style.left = 0px;
+    }
+    function moveRight() {
+        img.style.left = parseInt(img.style.left) + 10 + 'px';
+    }
+window.onload = init;
+
+
+    </body>
