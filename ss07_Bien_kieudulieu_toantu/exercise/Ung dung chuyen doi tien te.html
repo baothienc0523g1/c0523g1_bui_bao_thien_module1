@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung dung chuyen doi tien te</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From</th>
+        <th>to</th>
+    </tr>
+    <tr>
+        <th><input type="number" id="amount" placeholder="Nhap vao so tien"></th>
+        <th>
+            <select id="from">
+                <option value="VND" id="VND">VND</option>
+                <option value="USD" id="USD">USD</option>
+
+            </select>
+        </th>
+        <th>
+            <select id="to">
+                <option value="USD" id="USD">USD</option>
+                <option value="VND" id="VND">VND</option>
+
+            </select>
+        </th>
+    </tr>
+</table>
+<button type="button" id="button" onclick="doSomething()">Chuyen doi</button>
+<p id="result"></p>
+</body>
+<script>
+    function doSomething() {
+
+        let amount = parseInt(document.getElementById('amount').value)
+        let from = document.getElementById('from').value
+        let to = document.getElementById('to').value
+        let result
+
+        if (from === "VND" && to === "USD") {
+            result = amount / 23000 + "$";
+        } else if (from === "VND" && to === "VND") {
+            result = amount + "VND";
+        } else if (from === "USD" && to === "VND") {
+            result = amount * 23000 + "D";
+        } else
+            result = amount
+
+console.log(from.value)
+        console.log(to.value)
+        document.getElementById('result').innerHTML = "Result: " + result
+    }
+
+</script>
+</html>
