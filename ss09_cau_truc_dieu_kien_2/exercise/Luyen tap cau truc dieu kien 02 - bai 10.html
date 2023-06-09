@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 10: Viết chương trình tính giá điện.
+
+    </title>
+</head>
+<body>
+<p>Bài 10: Viết chương trình tính giá điện.</p>
+
+<table>
+    <tr>
+        <td>Nhap vap so dien cua ban (kWh)</td>
+    </tr>
+    <tr>
+        <td><input type="number" id="input"></td>
+    </tr>
+    <tr>
+        <td>
+            <select id="object">
+                <option value="giaDinh">Gia Dinh</option>
+                <option value="sanXuat">San Xuat</option>
+            </select>
+        </td>
+    </tr>
+    <div id="result"></div>
+</table>
+<button onclick="doThis()">Submit</button>
+<p>Chu thich</p>
+<ul>
+    <li>VAT: 10% hoa don</li>
+    <li>Ho gia dinh: 3000 VND/kWh</li>
+    <li>Dien san xuat: 2000 VND/kWh</li>
+</ul>
+<div id="result"></div>
+<script>
+    function doThis() {
+        let input = parseFloat(document.getElementById("input").value);
+        let data = document.getElementById("object").value
+
+        if (data == "giaDinh") {
+            input = (input * 3000)
+            document.getElementById('result').innerText = "Result: " + input;
+        }
+        else
+            input = (input * 2000)
+        document.getElementById('result').innerText = "Result: " + input;
+    }
+</script>
+</body>
+</html>

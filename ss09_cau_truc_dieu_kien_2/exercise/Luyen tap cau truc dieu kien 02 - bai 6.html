@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap cau truc dieu kien 02 - bai 6</title>
+</head>
+<body>
+<h1>Bài 6: Giải phương trình bậc 1.</h1>
+<p>Phuong trinh bac nhac co dang:</p>
+<p>ax + b = 0</p>
+<p>nhap vao gia tri cua a</p><br>
+<input type="number" id="a" style="width: 300px"><br>
+<p>nhap vao gia tri cua b</p><br>
+<input type="number" id="b" style="width: 300px"><br>
+
+<button type="button" onclick="match()">Tinh toan</button>
+<table>
+    <tr>
+        <td>Ket qua la x bang: </td>
+        <td><div id="result"></div></td>
+    </tr>
+
+</table>
+<script>
+    function match() {
+        let a = parseFloat(document.getElementById("a").value);
+        let b = parseFloat(document.getElementById("b").value);
+        let result
+
+        if (a == 0) {
+            alert("a = 0, phuong trinh vo nghiem");
+        } else {
+            result = -b / a
+            document.getElementById("result").innerText = result;
+        }
+    }
+
+</script>
+
+</body>
+
+</html>

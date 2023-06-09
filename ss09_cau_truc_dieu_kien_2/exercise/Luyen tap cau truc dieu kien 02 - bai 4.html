@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4: Tính diện tích hình chữ nhật khi biết 02 cạnh a, b.</title>
+</head>
+<body>
+<p>Bài 4: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.</p>
+<table>
+    <tr>
+        <td>Nhap vao chieu dai</td>
+        <td><input type="number" id="height" style="width: 200px"></td>
+    </tr>
+    <tr>
+        <td>Nhap vao chieu rong</td>
+        <td><input type="number" id="weight" style="width: 200px"></td>
+    </tr>
+</table>
+<button onclick="match()" style="width: 80px; height: 80px;" >Tinh toan</button>
+<div id="result">Dien tich cua hinh chu nhat nay la: </div>
+<script>
+    function match() {
+        let a = parseFloat(document.getElementById("height").value);
+        let b = parseFloat(document.getElementById("weight").value);
+
+        let c = a*b;
+        document.getElementById("result").innerText = c;
+    }
+</script>
+
+
+</body>
+</html>

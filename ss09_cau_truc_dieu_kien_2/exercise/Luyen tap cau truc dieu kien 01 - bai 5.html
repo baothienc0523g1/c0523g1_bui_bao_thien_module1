@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap cau truc dieu kien 01 - bai 5</title>
+</head>
+<body>
+<h3>DTB > 8.5: HSG</h3>
+<h3> 8.5 > DTB > 6.5: HSK</h3>
+<h3>DTB < 6.5: HSTB</h3>
+<input style="width: 200px" type="number" min="1" max="10" id="mon1" placeholder="Nhap vao diem mon 1"> <br/>
+<input style="width: 200px" type="number" min="1" max="10" id="mon2" placeholder="Nhap vao diem mon 2"> </br>
+<button onclick="button()" id="button()">Nhap du lieu</button>
+<p id="result"></p>
+<script>
+  function button()
+  {
+    let a = parseFloat(document.getElementById("mon1").value);
+    let b = parseFloat(document.getElementById("mon2").value);
+    dtb = (a+b)/2;
+
+    if (dtb > 8.4) {
+      alert("Hoc sinh gioi!" ); }
+    else {
+      if (dtb > 6.4)
+        alert("Hoc sinh kha!");
+      else
+       alert("Hoc sinh trung binh!")
+        ;
+    }
+  }
+
+</script>
+</body>
+</html>

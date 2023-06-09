@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap cau truc dieu kien 02 - bai 11</title>
+</head>
+<body>
+<p>Bài 11: Viết chương trình tính thuế thu nhập cá nhân.</p>
+
+<input type="number" id="input" placeholder="Nhap vao thu nhap cua ban, don vi: VND">
+<button type="button" onclick="submit()">Tinh thue</button>
+
+<script>
+    function submit() {
+
+        let input = parseFloat(document.getElementById("input").value);
+
+        if (input > 32000000) {
+            input = [(input * 0.28) + 2100000] + "D"
+                alert("so thue ban can phai nop la:" + input); }
+        if (input > 18000000) {
+            input = [(input * 0.25) + 1950000] + "D"
+            alert("so thue ban can phai nop la:" + input); }
+        if (input > 10000000) {
+            input = [(input * 0.15) + 750000]  + "D"
+            alert("so thue ban can phai nop la:" + input); }
+        if (input > 5000000) {
+            input = [(input * 0.1) + 250000]  + "D"
+        } if (input <= 5000000)
+        {
+            alert("Thu nhap nho hon 5trieu, ko the nop thue"); }
+
+    }
+
+</script>
+
+</body>
+</html>

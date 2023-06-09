@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 12: Viết chương trình tính lãi ngân hàng</title>
+</head>
+<body>
+<div>Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi
+    biết số tiền ban đầu, số tháng cho vay và lãi suất hàng tháng.
+</div>
+<input type="number" id="input" placeholder="So tien vay, don vi VND"></br>
+<p>Thoi gian vay (don vi: thang)</p>
+<select name="Thoi gian vay" id="option">
+    <option>3</option>
+    <option>6</option>
+    <option>9</option>
+    <option>12</option>
+    <option>18</option>
+    <option>24</option>
+</select> <br/>
+<button onclick="trans()">Xac nhan</button>
+<ul>
+    <li>Neu thoi gian vay >12 thang: lai suat hang thang la 10%</li>
+    <li>Neu thoi gian vay >18 thang: lai suat hang thang la 15%</li>
+    <li>Neu thoi gian vay >24 thang: lai suat hang thang la 20%</li>
+</ul>
+<script>
+    function trans() {
+        let input = parseFloat(document.getElementById("input").value);
+        let time = parseInt(document.getElementById("option").value);
+
+        if (time === 24) {
+            input = (input * 0.2) + "VND"
+            alert("Lai suat cua ban la" +input); }
+
+        if (time === 18) {
+            input = (input * 0.15) + "VND"
+            alert("Lai suat cua ban la" +input); }
+
+        if (time === 12) {
+            input = (input * 0.1) + "VND"
+            alert("Lai suat cua ban la" +input); }
+
+        if (time <= 9) {
+            input = (input * 0.08) + "VND"
+            alert("Lai suat cua ban la" +input); }
+
+
+
+    }
+</script>
+</body>
+</html>

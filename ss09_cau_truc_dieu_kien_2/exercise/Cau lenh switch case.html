@@ -5,45 +5,50 @@
     <title>Cau lenh switch case</title>
 </head>
 <body>
-<input type="text" id="input" placeholder="Nhap thang vao day!">
-<button onclick="changeData()">So ngay trong thang</button>
+<input   type="number" id="input" placeholder="Nhap thang vao day!">
+
+<button onclick=changeData()>So ngay trong thang</button>
 <script>
-    function changeData()
+
+    function changeData() {
+        let month = document.getElementById('input').value;
+
+    switch (month)
+
     {
-
-    let month = parseInt(document.getElementById('input'));
-    if (month < 13);{
-
-    switch (month) {
-
-        case 1:
-        case 3:
-        case 5:
-        case 7:
-        case 8:
-        case 10:
-        case 12: {
-            document.write("Thang nay co: 31 ngay");
+        case "1":
+        case "3":
+        case "5":
+        case "7":
+        case "8":
+        case "10":
+        case "12": {
+            alert("Thang nay co: 31 ngay");
         }
             break;
-        case 4:
-        case 6:
-        case 9:
-        case 11: {
-            document.write("Thang nay co: 30 ngay");
+
+        case "4":
+        case "6":
+        case "9":
+        case "11": {
+            alert("Thang nay co: 30 ngay");
         }
             break;
+        case "2": {
+            alert("Thang 2 co: 28 hoac 29 ngay");
+        }
+        break;
         default: {
-            document.write("Thang 2 co: 28 hoac 29 ngay");
+            alert("Vui long nhap lai thang");
         }
-            break;
+    }
 
-    }
-    else {
-        alert("So thang phai nho hon 12");
-        }
-    }
-    }
+         }
+
+
+
+
+
 
 
 </script>

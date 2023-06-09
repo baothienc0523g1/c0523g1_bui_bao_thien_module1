@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap cau truc dien kien 02 - bai 8</title>
+</head>
+<body>
+<p>Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.</p>
+<br>
+<p>Nhap so tuoi</p>
+<input type="number"  id="input" style="width: 200px">
+</br>
+<button onclick="submit()" style="width: 40px; height: 40px;">Xac nhan</button>
+
+<script>
+  function submit() {
+    let a = document.getElementById("input").value;
+
+    if (a == parseInt(a) && a < 120 && a >0)
+      alert("so tuoi cua ban la:" +a);
+    else
+      alert("So tuoi nhap vao khong hop le");
+  }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap cau truc dieu kien 01 - bai 7</title>
+</head>
+<body>
+<h2>Tong cong ty vien thong quan doi Vitteo</h2>
+<input style="width: 300px
+" type="number" id="input" placeholder="Nhap vao so phut goi (don vi: phut)"> <br/>
+<button onclick="confirm()">Xac nhan!</button>
+<p id="result"></p>
+<h3>Thong bao cuoc phi</h3>
+<ul>
+    <li>Phi co dinh moi thang: 25 000 D</li>
+    <li>Duoi 100 phut goi: 300 D/phut</li>
+    <li>Duoi 200 phut goi: 400 D/phut</li>
+    <li>Duoi 300 phut goi: 500 D/phut</li>
+    <li>Tren 300 phut goi: 600 D/phut</li>
+</ul>
+
+<script>
+    function confirm() {
+        let input = parseInt(document.getElementById("input").value);
+        let total;
+
+        if (input > 300) {
+            total = input * 600
+            document.getElementById("result").innerText = "Cuoc phi  thang nay cua ban la " + total;
+        }
+        if (input <= 300) {
+            total = input * 500
+            ddocument.getElementById("result").innerText = "Cuoc phi  thang nay cua ban la " + total;
+        }
+        if (input <= 200) {
+            total = input * 400
+            ddocument.getElementById("result").innerText = "Cuoc phi  thang nay cua ban la " + total;
+        }
+        if (input <= 100) {
+            total = input * 300
+            document.getElementById("result").innerText = "Cuoc phi  thang nay cua ban la " + total;
+        }
+    }
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap cau truc dieu kien 01 - bai 6</title>
+</head>
+<body>
+<h1>Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng
+</h1>
+<table>
+    <thead>Nhap vao doanh so cua ban theo tung quy
+    </thead>
+    <tr>
+        <td>Quy</td>
+        <td>Quy I</td>
+        <td>Quy II</td>
+        <td>Quy III</td>
+        <td>Quy IV</td>
+    </tr>
+    <tr>
+        <td>Doanh so (don vi: VND)</td>
+        <td><input type="number" id="quy1"></td>
+        <br/>
+        <td><input type="number" id="quy2"></td>
+        <td><input type="number" id="quy3"></td>
+        <td><input type="number" id="quy4"></td>
+    </tr>
+
+</table>
+
+
+<p>*Mỗi nhân viên được quy định mức doanh thu 50 triệu đồng
+    thì sẽ hưởng 5% hoa hồng. Ở cấp doanh thu từ 50-100 triệu đồng thì sẽ nhận được 7% hoa hồng. Và trên 100 triệu doanh
+    thu thì sẽ nhận 10% hoa hồng.</p>
+<button onclick="doSomething()">Xac Nhan</button>
+<button type="reset">Nhap lai tu dau</button>
+<p id="result"></p>
+<script>
+    function doSomething() {
+        let a = parseFloat(document.getElementById("quy1").value);
+        let b = parseFloat(document.getElementById("quy2").value);
+        let c = parseFloat(document.getElementById("quy3").value);
+        let d = parseFloat(document.getElementById("quy4").value);
+
+        let total = (a + b + c + d);
+
+        if (total > 100000000) {
+            total = (total*0.1);
+            alert("doanh thu nam nay cua ban la: " +total);
+
+        }
+        if (total <= 100000000) {
+            total = (total*0.07);
+            alert("doanh thu nam nay cua ban la: " +total);
+
+        }
+        if (total < 50000000) {
+            total = (total * 0.05);
+            alert("doanh thu nam nay cua ban la: " +total);
+
+            // document.getElementById("result") = total;
+        }
+    }
+
+
+</script>
+</body>
+</html>

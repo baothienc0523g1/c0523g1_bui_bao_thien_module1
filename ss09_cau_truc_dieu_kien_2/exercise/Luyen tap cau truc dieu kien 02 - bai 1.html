@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap cau truc dieu kien 02 - bai 1</title>
+</head>
+<body>
+<h3>Chuyen nhiet do tu don vi do C sang do F</h3><br/>
+<input  type="number" id="input" placeholder="Nhap nhiet do o thang do Celcius" style="width: 200px;"><br/>
+<button onclick="change()">Chuyen doi nhiet do</button>
+
+</body>
+<script>
+  function change() {
+    let input = parseInt(document.getElementById("input").value);
+    input = (input*9/5+32)
+    alert("Ket qua la: " +input );
+  }
+</script>
+
+
+</html>
