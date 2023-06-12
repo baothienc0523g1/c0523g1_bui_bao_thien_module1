@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+    </title>
+</head>
+<body>
+<h1>Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.</h1>
+
+<script>
+    let i;
+    let n1 = 0;
+    let n2 = 1;
+    let result = null;
+
+    for (i = 1; i < 21; i++) {
+        n1 = n2;
+        n2 = result;
+        result = n1 + n2;
+        document.write("so thu" + i + "=" + result + "<br/>")
+    }
+</script>
+
+</body>
+</html>

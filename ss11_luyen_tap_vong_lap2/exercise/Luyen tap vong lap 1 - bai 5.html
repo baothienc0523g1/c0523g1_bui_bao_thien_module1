@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap vong lap 1 - bai 5</title>
+</head>
+<body>
+
+<h1>Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.</h1>
+
+<script>
+  let i;
+  let n1 = 0;
+  let n2 = 1;
+  let result = null;
+  let sum = 0;
+
+  for (i = 1; i < 21; i++) {
+    n1 = n2;
+    n2 = result;
+    result = n1 + n2;
+    sum = sum + result;
+
+    document.write("so thu" + i + "=" + result + "<br/>")
+
+  }
+    document.write("tong cua day so tren la: " +sum)
+
+
+</script>
+
+</body>
+</html>

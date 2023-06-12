@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.</title>
+</head>
+<body>
+<p>Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.</p>
+
+<script>
+  let i;
+  let n1 = 0;
+  let n2 = 1;
+  let result = null;
+
+  for (i = 1; i < 21; i++) {
+    n1 = n2;
+    n2 = result;
+    result = n1 + n2;
+    document.write("so thu" + i + "=" + result + "<br/>")
+  if(result%5==0) {
+    mod5 = result
+    document.write("so dau tien chia het cho 5 la: " + mod5);
+    break;
+  }
+  }
+
+
+
+
+
+
+</script>
+</body>
+</html>

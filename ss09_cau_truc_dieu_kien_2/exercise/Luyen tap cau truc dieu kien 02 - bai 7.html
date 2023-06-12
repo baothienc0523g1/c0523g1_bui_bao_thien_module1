@@ -11,7 +11,6 @@
 <!--bai nay em chua hoan thanh-->
 
 
-
 <p>Phuong trinh bac nhac co dang:</p>
 <p>ax^2 + bx + c = 0</p>
 <p>nhap vao gia tri cua a</p><br>
@@ -21,7 +20,7 @@
 <p>nhap vao gia tri cua c</p><br>
 <input type="number" id="c" style="width: 300px"><br>
 <button type="button" onclick="match()">Tinh toan</button>
-
+<div id="result"></div>
 <script>
     function match() {
 
@@ -29,26 +28,26 @@
         let b = parseInt(document.getElementById("b").value);
         let c = parseInt(document.getElementById("c").value);
 
-        let delta = [Math.pow(b,2) - (4 * a * c)];
+        let delta = [Math.pow(b, 2) - (4 * a * c)];
 
         if (delta < 0)
             alert("Delta < 0, phuong trinh vo nghiem");
-            else if (delta === 0) {
+        else if (delta == 0) {
             x = [-b / (2 * a)]
-            alert("Phuong trinh co nghiem kep: " +x);
-        }  else {
-             x1 = [(-b + Math.pow(delta, 2)) / 2 * a]
-             x2 = [(-b - Math.pow(delta, 2)) / 2 * a]
-            alert("Phuong trinh co 2 nghiem la: " +x1 +x2);
+            alert("Phuong trinh co nghiem kep: x =" + x);
+        } else {
+            x1 = [(-b + Math.pow(delta,0.5)) / 2 * a];
+            x2 = [(-b - Math.pow(delta,0.5)) / 2 * a];
+
+            document.getElementById("result").innerText = ("Pt co 2 nghiem phan biet: ") +x1 || +x2;
 
         }
     }
 
 
-
-    // x1 = [(-b + Math.pow(delta, 2)) / 2 * a];
-    // x2 = [(-b - Math.pow(delta, 2)) / 2 * a];
-    // xx = -b / (2 * a);
+    // x1 = [(-b + Math.pow(delta, 0.5)) / 2 * a];
+    // x2 = [(-b - Math.pow(delta, 0.5)) / 2 * a];
+    // x = -b / (2 * a);
 
 
 </script>

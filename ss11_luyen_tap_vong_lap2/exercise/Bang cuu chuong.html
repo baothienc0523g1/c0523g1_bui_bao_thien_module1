@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng cửu chương</title>
+</head>
+<body>
+<h1>Bảng cửu chương
+</h1>
+
+<script>
+
+    let table = "<table border='1' width='300' cellspacing='0' cellpadding='3'>"
+    for (col = 1; col < 10; col++) {
+        table = table + "<tr>";
+        for (row = 2; row < 10; row++) {
+            table = table + "<td>" + row + "x" + col + "=" +row*col   +"</td>";
+        }
+        table = table + "</tr>"
+    }
+    document.write(table);
+
+
+</script>
+</body>
+</html>

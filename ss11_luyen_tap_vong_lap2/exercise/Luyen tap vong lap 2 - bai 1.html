@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1: In dãy Fibonaci</title>
+
+</head>
+<body>
+<h2>Bài 1: In dãy Fibonaci</h2>
+<!--bài tập chỉ yêu cầu in dãy fibonacci mà không yêu cầu bao nhiêu lần lặp nên em -->
+<!--cho số lần lặp là 100 tránh tình trạng vòng lặp vô hạn a!-->
+<script>
+    let n1 = 0;
+    let n2 = 1;
+    let result = null;
+    let i;
+
+    for (i = 0; i < 100; i++) {
+        n1 = n2;
+        n2 = result;
+        result = n1 + n2;
+        document.write(result + "</br>");
+    }
+</script>
+</body>
+</html>
