@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let textString = ['K', 't', 'e', 'a', 'm', 'z', 5, 8, 98, 5, 150];
+
+    let size = textString.length;
+
+    document.write("Tổng số phần tử trong dãy " + textString + " là " + size);
+    document.write("</br>");
+
+    let count = 0; //bien count dung de dem ki tu la so trong mang textString
+    for (let i = 0;i < textString.length; i++) {
+        if (textString[i]/1 === textString[i]) {
+            count++
+        }
+        }
+    document.write("Có " + count + " phần tử thuộc dạng chữ số");
+
+</script>
+</body>
+</html>

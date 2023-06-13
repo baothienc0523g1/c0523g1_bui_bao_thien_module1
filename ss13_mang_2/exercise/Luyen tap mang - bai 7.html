@@ -11,7 +11,21 @@
 </h2>
 <body>
 <script>
-    let x = [1,2,3,4,5,6,7,8,9,0]
+    let x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+    let input = +prompt("Enter a random number:");
+    document.write(x);
+    document.write("</br>");
+
+    for (let i = 0; i < x.length; i++) {
+        if (x[i] == input) {
+            x.splice(i, 1);
+            x.push(0);
+        }
+    }
+
+
+
+
 </script>
 </body>
 </html>

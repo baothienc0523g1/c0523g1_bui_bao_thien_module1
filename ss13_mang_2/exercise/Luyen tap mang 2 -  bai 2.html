@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = ['d', 's', 'c', '2', '6', '1'];
+    let first = 0;
+    let last = a.length - 1;
+    let i;
+    let b = ""
+
+    while (first < last) {
+        b = a[first];
+        a[first] = a[last];
+        a[last] = b;
+        first++;
+        last--;
+    }
+    document.write(a);
+    console.log(a);
+</script>
+</body>
+</html>

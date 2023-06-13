@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h2>Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử. Chương trình sắp xếp mảng theo thứ tự
+    giảm dần và hiển thị ra mảng đã được sắp xếp.
+
+</h2>
+<body>
+<script>
+    let x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    document.write("Chuoi ban dau la: " +x);
+
+    document.write("</br>");
+
+    x.sort(function (a,b){return b - a});
+    document.write("sau khi sap xep ta co gia tri chuoi moi: " +x);
+
+    // em tính làm theo cách này:
+    // lấy một giá trị max = x[0];
+    // xét vòng lặp nếu giá trị đc xét là max thì sẽ dùng y.push(max) để thêm nó vào (y)
+    // sau đó loại giá trị max đó khỏi vòng lặp, và cứ tiếp tục xét như vậy. Nhưng chưa biết
+    // cách làm đó sai chỗ nào, em sẽ để demo ngay dưới để a sửa giúp e ạ.
+    //
+    // let x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // let y = [];
+    // let max = x[0];
+    //
+    // for (let i = 0;i < x.length; i++) {
+    //     if (x[i] > max) {
+    //         max = x[i];
+    //             y.push(max);
+    //             x.splice(i);
+    //     }
+    //     document.write(y);
+    //
+    // }
+    //
+
+
+
+
+</script>
+</body>
+</html>
