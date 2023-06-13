@@ -7,20 +7,50 @@
 </head>
 <body>
 <h2>Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau</h2>
+<span style="color: red" id="triAngle4">******</span>
+</br>
 
 <script>
     let i = 1;
-    let x = "";
+    let tamGiac1 = "";
 
     for (i = 1; i <= 5; i++) {
-        x += "*";
-        document.write(x + "</br>");
+        tamGiac1 += "*";
+        document.write(tamGiac1 + "</br>");
     }
 
 
+    document.write("<br/>")
 
 
+    let tamGiac2 = "******";
 
+    for (i = 1; i <= 5; i++) {
+        tamGiac2 = tamGiac2.substring((6, 1));
+        document.write(tamGiac2 + "</br>");
+    }
+
+    document.write("<br/>")
+
+
+    let x = "";
+    let y = "*******"
+    for (i = 0; i < 6; i++) {
+        y = y.substring(6, 1);
+        x += "<span style='color: white'>*</span>";
+        tamGiac3 = x + y;
+        document.write(tamGiac3 + "</br>");
+    }
+
+    let a = "<span style='color: white'>******</span>";
+    let b = ""
+    for (i = 0; i < 5; i++) {
+        a = a.substring(5, 1);
+        b += "*";
+        tamGiac4 = a + b;
+        document.write(tamGiac4 + "</br>");
+    }
+// Chỗ này em chưa hiểu vì sao gán giá trị biến a như vậy nhưng khi hiển thị thì nó ra thẻ span ạ
 
 </script>
 

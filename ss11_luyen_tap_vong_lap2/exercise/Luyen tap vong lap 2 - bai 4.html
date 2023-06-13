@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4: In hình chữ nhật</title>
+</head>
+<body>
+<script>
+    let w = 24;
+    let h = 6;
+    let quad = "";
+    let i = 1;
+    let j = 1;
+    while (i <= h){
+        while (j <= w){
+            if ((i == 1)||(i == h)||(j == 1)||(j == w)){
+                quad = quad + "<span>*</span>"
+            }
+            else {
+                quad = quad + "<span style='color: white'>*</span>"
+            }
+            j++;
+        }
+        quad = quad + "<br>";
+        i++;
+        j = 1;
+    }
+    document.write(quad);
+
+</script>
+</body>
+</html>
