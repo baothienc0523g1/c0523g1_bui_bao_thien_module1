@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Từ điển</title>
+</head>
+<body>
+<label>Nhap du lieu can tim kiem: <input type="text" id="inputText">
+</label>
+</br>
+<button id="button" onclick="search()">Search!</button>
+<script>
+    function search() {
+
+    let eng = ['apple', 'banana', 'orange'];
+    let vie = ['tao', 'chuoi', 'cam'];
+    let e = document.getElementById("inputText").value;
+    let resultEng = 0;
+    let result = "";
+
+    for (let i = 0;i < eng.length;i++) {
+        if (e == eng[i]) {
+            resultEng = i;
+            for (let j = 0;j < vie.length;j++) {
+                if (resultEng == j) {
+                    result = vie[j]
+                }
+            }
+        }
+    }
+    alert(result);
+    }
+</script>
+</body>
+</html>

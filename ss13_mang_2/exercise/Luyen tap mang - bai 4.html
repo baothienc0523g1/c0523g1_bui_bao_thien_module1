@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h2>Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.
+
+</h2>
+<body>
+<script>
+    let randomString = [1,2,3,4,5,6,7,8,9];
+    let first = 0;
+    let last = randomString.length-1;
+
+    document.write(randomString);
+    document.write("</br>");
+
+    while (first<last) {
+        let a = randomString[first];
+        randomString[first] = randomString[last];
+        randomString[last] = a;
+        first++;
+        last--;
+            }
+            document.write("Mang sau khi dao nguoc la: " +randomString);
+</script>
+</body>
+</html>

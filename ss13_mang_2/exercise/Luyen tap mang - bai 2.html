@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h2>Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau. Chương trình hiển thị ra được phần tử có
+    giá trị lớn nhất trong mảng và vị trí của phần tử đó.
+
+</h2>
+<body>
+
+<script>
+    let randomString = [5, 8, 4, 854, 85, 4, 12, 51, 21, 87, 83];
+    let max = randomString[0];
+    let result = "";
+
+    for (let i = 0;i <randomString.length; i++) {
+        if (randomString[i] > max) {
+            max = randomString[i];
+            result = i;
+        }
+    }
+    document.write("Gia tri lon nhat la: " + max + " tai vi tri so:  " + result);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<h2>Bài 3- Viết chương trình khởi tạo mảng số nguyên. Hiển thi giá trị lớn nhất trong mảng đó.
+    In ra giá trị trung bình của các phần tử trong mảng.
+</h2>
+<body>
+
+<script>
+    let randomString = [9,7,54,234,765,234,45,743,74,66,235,2];
+    let max = randomString[0];
+    let result = "";
+
+    for (let i = 0;i < randomString.length;i++) {
+        if (randomString[i] > max) {
+            max = randomString[i];
+        }
+    }
+    document.write("gia tri lon nhat la: " + max);
+
+    document.write("</br>");
+
+    //xac dinh so phan tu trong mang
+    let size = randomString.length;
+
+    let avg =""
+    let a = 0;
+    for (let i = 0;i < randomString.length;i++) {
+       a += randomString[i];
+    }
+    avg = a/size
+    document.write("gia tri trung binh cua cac phan tu trong mang nay la: " +avg);
+
+
+
+</script>
+
+
+</body>
+</html>
