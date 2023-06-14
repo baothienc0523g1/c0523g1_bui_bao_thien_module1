@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let stringA = [1, 3, 5, 'a', 'b', 'c', 'd'];
+    let stringB = [2, 3, 4, 'a', 'c', 'd', 'e'];
+
+    // let stringA = [6,7,8,9];
+    // let stringB = [6,7,8,9];
+    //
+
+
+
+    let compli = JSON.stringify(stringA) === JSON.stringify(stringB);
+    if (!compli) {
+
+        document.write("2 chuoi nay khac nhau");
+
+    } else {
+        document.write("2 chuoi giong nhau");
+
+    }
+</script>
+
+</body>
+</html>

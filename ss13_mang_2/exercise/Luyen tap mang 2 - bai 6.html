@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Bài 6: Viết chương trình nhập vào một mảng ký tự,
+    tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này
+    bởi ký tự ( _ )
+
+</h3>
+
+<script>
+    let randomString = prompt("Nhap vao chuoi ky tu chua dau '-'")
+    let i;
+    let randomString2 = [];
+
+    document.write("chuoi ban dau co gia tri " + randomString);
+
+    document.write("</br>");
+
+    for (i = 0; i < randomString.length; i++) {
+        if (randomString[i] == '-') {
+            randomString2 += '_';
+        }
+        else {
+        randomString2 += randomString[i]; }
+    }
+    document.write("chuoi moi co gia tri la: " + randomString2);
+</script>
+
+
+</body>
+</html>
