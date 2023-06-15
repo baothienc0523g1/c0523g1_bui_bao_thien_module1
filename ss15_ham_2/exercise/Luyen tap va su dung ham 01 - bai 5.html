@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //bài này em hiểu luồng thực thi câu lệnh và thứ tự thực thi cũng như logic nhưng không biết
+    // vì sao chương trình chạy ko đúng a
+    let star1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
+    let star2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+
+    function checkStar(input) {
+        let pos = 0;
+        let result = '';
+
+        for (let i = 0; i < star1.length; i++) {
+            if (input == star1[i]) {
+                pos = i;
+                for (let j = 0; j < star2.length; j++) {
+                    if (pos == j) {
+                        result = star2[j];
+                        return result;
+                        alert(result);
+                    } else
+                        alert("khong tim thay sao");
+                    return result;
+                }
+            } else {
+                alert("khong co ngoi sao nay, hay nhap lai. ");
+            }
+        }
+    }
+    let inputA = prompt("Nhap vao ten mot ngoi sao");
+    checkStar(inputA);
+</script>
+
+</body>
+</html>

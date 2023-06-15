@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p>Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+</p>
+
+<script>
+    function compari(a,b,c) {
+        if (a < b && a < c) {
+            alert("So nho nhat la " + a);
+        }
+        if (b < c && b < a) {
+                alert("so nho nhat la " + b);
+        }
+        if (c < a && c < b) {
+            alert("so nho nhat la " + c);
+        }
+    }
+
+    let x = parseInt(prompt("nhap vao so thu nhat"));
+    let y = parseInt(prompt("nhap vao so thu hai"));
+    let z = parseInt(prompt("nhap vao so thu ba"));
+
+    compari(x,y,z);
+
+
+
+
+</script>
+</body>
+</html>

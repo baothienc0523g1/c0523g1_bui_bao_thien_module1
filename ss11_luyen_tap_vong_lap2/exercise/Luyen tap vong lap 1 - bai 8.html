@@ -7,31 +7,25 @@
 <body>
 <button onclick="doanSo()">Bat dau choi</button>
 <script>
-  function doanSo() {
-    let input = +prompt("Nhập vào số lớn nhất trong khoảng bạn muốn đoán:");
-    let number = Math.floor(Math.random() * input);
-
-    let numberCheck = +prompt("Nhập số bạn đoán:")
-    let count = 0;
-    while (numberCheck !== number) {
-      count++;
-      if (count === 4) {
-        alert("bạn đã hết số lần đoán");
-        break;
-      } else if (numberCheck < number) {
-        alert("Số bạn đoán bé hơn");
-      } else {
-        alert("Số bạn đoán lớn hơn");
-      }
-      numberCheck = +prompt("Nhập số bạn đoán:");
+    function doanSo() {
+        let down = +prompt("Nhap can duoi: ");
+        let up = +prompt("Nhap can tren: ");
+        let random = Math.round(Math.random() * (up - down) + down);
+        console.log(random)
+        let i = 1;
+        do {
+            let inputNum = +prompt("Nhap so ma ban doan: ");
+            if (inputNum > random) {
+                alert("Ban nhap so lon hon, con " + (3 - i) + " lan nhap. ")
+            } else if (inputNum < random) {
+                alert("Ban nhap so be hon, con " + (3 - i) + " lan nhap. ")
+            } else {
+                alert("Chuc mung ban")
+                break;
+            }
+            i++
+        } while (i <= 3)
     }
-  if (count === 4) {
-    alert("Bạn hết số lần đoán");
-  } else {
-    alert("Bạn đã đoán đúng số");
-  }
-  }
-
 </script>
 </body>
 </html>

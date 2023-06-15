@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h2>Chuyển đổi giữa feet và meters</h2>
+<body>
+<p><input type="number" id="feetInput" onchange="feetToMet(this.value)" placeholder="Nhap vao chi so Feet"
+          oninput="feetToMet(this.value)"></p>
+<p><span id="resultF"></span> met</p>
+</br>
+<p><input type="number" id="metInput" onchange="metToFeet(this.value)" placeholder="Nhap vao chi so Meter"
+          oninput="metToFeet(this.value)"></p>
+<p><span id="resultM"></span> feet</p>
+
+<script>
+    // let inputFeet = +prompt("Nhap so feet");
+    // let inputMet = +prompt("Nhap so met");
+    // feetToMet(inputFeet);
+    // metToFeet(inputMet);
+
+    function feetToMet(f) {
+        inputFeet = document.getElementById("feetInput").value;
+        let foot = inputFeet * 3.279;
+        document.getElementById("resultF").innerHTML = foot;
+
+        // document.write(inputFeet + " feet chuyen sang met la " + foot + " met." + "</br>");
+
+    }
+
+    function metToFeet(m) {
+        inputMet = document.getElementById("metInput").value;
+
+        let met = inputMet * 0.305;
+        document.getElementById("resultM").innerHTML = met;
+
+        // document.write(inputMet + "m chuyen sang feet la " + met + " feet.");
+
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Bài 3: Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất
+    lớn hơn tham số thứ hai, hiển thị hộp thoại thông báo cho người dùng.
+    Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai,
+    trả về tổng của hai
+    tham số.
+</h2>
+
+<script>
+    a = parseFloat(prompt("Nhap vao so thu nhat"));
+    b = parseFloat(prompt("Nhap vao so thu hai"));
+    if (a > b)
+        alert("So thu nhat lon hon so thu hai, " +
+            "nhap so thu nhat be hon hoac bang so thu hai");
+    else
+        function make(a,b) {
+        result = a + b;
+        return result;
+        }
+    make(a,b)
+    alert("ket qua la " + result);
+
+</script>
+
+</body>
+</html>

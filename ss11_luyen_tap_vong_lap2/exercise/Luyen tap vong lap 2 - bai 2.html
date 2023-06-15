@@ -10,12 +10,12 @@
 
 <script>
     let input = parseInt(prompt("Nhap vao so nguyen duong can tinh giai thua"));
-    let i = 1;
+    let i;
     let result = 1;
 
-    while (i <= input) {
+    for (i = 1;i <= input;i++) {
         result = result * i;
-        i++;
+
     }
     alert("Giai thua: " + result);
 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h2>[Bài tập] Hàm kiểm tra số nguyên tố
+</h2>
+<body>
+<script>
+    let input = parseInt(prompt("Nhap vao mot so bat ky de kiem tra: "));
+    checkPrime(input);
+
+    function checkPrime(input) {
+        let count = 0;
+        let condition = false;
+
+        if (input == 0) {
+            alert(input + " khong phai la so nguyen to");
+        } else {
+            for (let i = 1; i <= input; i++) {
+                if (input % i == 0) {
+                    count += 1;
+                }
+            }
+        }
+        if (count == 2) {
+            condition = true;
+        }
+        if (condition) {
+            alert (input + " la so nguyen to.");
+        } else {
+            alert((input + " khong phai la so nguyen to"));
+        }
+    }
+
+</script>
+</body>
+</html>

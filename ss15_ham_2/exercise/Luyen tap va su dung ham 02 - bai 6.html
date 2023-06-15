@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không.
+  Nếu là nguyên dương trả về true, ngược lại trả về false.
+</h2>
+
+<script>
+  function checkNumber(a) {
+    if (a > 0) {
+      if (a == parseInt(a)) {
+        alert(a + " la mot so nguyen duong.")
+      } else { alert(a + " la mot so duong nhung khong phai so nguyen")
+      }
+    } else {
+      alert(a + " la mot so am")
+    }
+
+
+  }
+
+  let input = prompt("nhap vao mot so bat ky");
+  checkNumber(input);
+</script>
+
+</body>
+</html>
