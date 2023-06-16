@@ -7,11 +7,18 @@
 <body>
 
 <script>
-    let array = ['i','y','asdw','m','dnf','pqw',5,8,1,9,12];
+    let array = ['i', 'y', 'A', 'B', 'C', 'D', 5, 6, 8, 9, 12];
     let size = array.length;
     document.write('cho 1 chuoi co gia tri la: ' + array);
     document.write('</br>');
-    document.write('so phan tu trong chuoi la: ' + size);
+
+    let count = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (isNaN(array[i])) {
+            count++;
+        }
+    } alert("Số lượng phần tử là ký tự: " + count);
+
 </script>
 
 </body>
