@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+</h2>
+<script>
+    let input;
+    do {
+        input = +prompt("Nhập vào số lượng phần tử của mảng");
+        if (input <= 0) {
+            alert("số lượng phần tử phải là số lớn hơn 0")
+        }
+    }
+    while (input <= 0);
+
+    let newArr = [];
+
+    for (let i = 0; i < input; i++) {
+        newArr.push(+prompt("Nhap van phan tu thu " + (i + 1)));
+    }
+
+    document.write("Mảng nhập vào có các phần tử: " + newArr);
+
+    function reverse(arr) {
+        let first = 0;
+        let last = arr.length - 1;
+
+        while (first < last) {
+            let temp = arr[first];
+            arr[first] = arr[last];
+            arr[last] = temp;
+            first++;
+            last--;
+        }
+        return arr;
+    }
+
+    document.write("</br>");
+    let result = reverse(newArr);
+    document.write("Sau khi dao nguoc, ham co cach sap xep moi la : " + result);
+
+</script>
+
+
+</body>
+</html>

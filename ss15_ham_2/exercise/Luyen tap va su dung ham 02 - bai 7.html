@@ -10,13 +10,13 @@
 
 <script>
     function swap(a, b) {
-        return b, a;
-
+        return [a,b];
     }
 
-    input1=  prompt("nhap vao so dau tien");
-    input2=  prompt("nhap vao so thu hai");
-    swap(input1,input2);
+    input1 = prompt("nhap vao so dau tien");
+    input2 = prompt("nhap vao so thu hai");
+    result = swap(input1, input2);
+    alert(result);
 
 </script>
 

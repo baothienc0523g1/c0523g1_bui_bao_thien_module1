@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ,
+    kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự đó,
+    nếu không trả về -1.
+</h2>
+
+<script>
+
+    let n;
+    do {
+        n = prompt("Nhập vào số lượng ký tự");
+        if (n <= 0) {
+            alert("số lượng ký tự phải > 0")
+        }
+    } while (n <= 0);
+
+    let newArr = [];
+    let i = 0;
+    while (i < n) {
+        newArr.push(prompt("nhập vào ký tự thứ: " + (i + 1)));
+        i++;
+    }
+
+    document.write("dãy có giá trị: " + newArr);
+
+    document.write("</br>");
+
+    function checkText(input, arr) {
+
+        let count = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            if (input == arr[i]) {
+                count++;
+            }
+        }
+        if (count > 0)
+            return count;
+        else
+            return -1;
+    }
+
+
+    let index = prompt("nhap vao ky tu muon kiem tra");
+    console.log(checkText(index, newArr));
+
+</script>
+
+</body>
+</html>
