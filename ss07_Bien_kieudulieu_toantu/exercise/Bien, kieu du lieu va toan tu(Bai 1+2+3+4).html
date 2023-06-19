@@ -9,21 +9,21 @@
 <!--Bai 1: Nhap diem va tinh diem trung binh-->
 
 <script>
-    let VatLy
-    let HoaHoc
-    let SinhHoc
+    let vatLy;
+    let hoaHoc;
+    let sinhHoc;
 
-    VatLy = prompt("Nhap diem Ly")
-    HoaHoc = prompt("Nhap diem Hoa")
-    SinhHoc = prompt("Nhap diem Sinh")
+    vatLy = prompt("Nhap diem Ly");
+    hoaHoc = prompt("Nhap diem Hoa");
+    sinhHoc = prompt("Nhap diem Sinh");
 
-    Ly = parseInt(VatLy)
-    Hoa = parseInt(HoaHoc)
-    Sinh = parseInt(SinhHoc)
+    ly = parseInt(vatLy)
+    hoa = parseInt(hoaHoc)
+    sinh = parseInt(sinhHoc)
 
 
-    let TongDiem = (Ly + Hoa + Sinh)
-    let DTB = TongDiem / 3
+    let tongDiem = (Ly + Hoa + Sinh)
+    let dtb = TongDiem / 3
     document.write("Diem trung binh la:   " + DTB)
 
 </script>
@@ -31,10 +31,10 @@
 <!--Bai 2: Chuyen doi nhiet do-->
 <script>
 
-    let NhapNhietDoCelsius
+    let nhapNhietDoCelsius
 
-    NhapNhietDoCelsius = prompt("Nhap nhiet do o thang Celsius:")
-    Celsius = parseInt(NhapNhietDoCelsius)
+    nhapNhietDoCelsius = prompt("Nhap nhiet do o thang Celsius:")
+    celsius = parseInt(nhapNhietDoCelsius)
 
     let doF = [(9 * Celsius) / 5 + 32]
     document.write("Nhiet do o thang do Fahrenheit la: " + doF)
@@ -44,29 +44,29 @@
 
 <!--Bai 3: Viet chuong trinh tinh dien tich hinh tron-->
 <script>
-    let BanKinh
+    let banKinh
     let i=Math.PI
 
 
-    BanKinh = prompt("Nhap vao ban kinh hinh tron")
+    banKinh = prompt("Nhap vao ban kinh hinh tron")
 
-    BK = parseInt(BanKinh)
-    let S = [(BK * BK) * i]
+    bk = parseInt(banKinh)
+    let s = [(bk * bk) * i]
 
-    alert("Dien tich hinh tron la: " + S)
+    alert("Dien tich hinh tron la: " + s)
 </script>
 
 <!--Bai 4: Viet chuong trinh tinh chu vi hinh tron-->
 <script>
-    let DuongKinh
+    let duongKinh
     let i=Math.PI
 
-    DuongKinh=prompt("Nhap vao duong kinh hinh tron")
+    duongKinh=prompt("Nhap vao duong kinh hinh tron")
 
-    DK = parseInt(DuongKinh)
-    let P = DK*i
+    dk = parseInt(duongKinh)
+    let p = dk*i
 
-    alert("Chu vi hinh tron nay la: "+P)
+    alert("Chu vi hinh tron nay la: "+p)
 
 
 </script>
