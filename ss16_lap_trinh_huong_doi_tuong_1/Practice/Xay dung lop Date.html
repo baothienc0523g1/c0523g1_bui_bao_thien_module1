@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let myDate = function (day, month, year) {
+        //thuoc tinh
+        this.day = day;
+        this.month = month;
+        this.year = year;
+
+        //phuong thuc
+        this.getDay = function () {
+            return this.day;
+        }
+
+        this.getMonth = function () {
+            return this.month;
+        }
+
+        this.getYear = function () {
+            return this.year;
+        }
+
+        this.setDay = function (day) {
+            this.day = day;
+        }
+
+        this.setMonth = function (month) {
+            this.month = month;
+        }
+
+        this.setYear = function (year) {
+            this.year = year;
+        }
+    };
+    //goi cac thuoc tinh cua doi tuong
+    let date = new myDate(2, 3, 1234);
+
+    // let day = date.getDay();
+    // let month = date.getMonth();
+    // let year = date.getYear();
+    // alert(day + "/" + month + "/" + year);
+
+    //thay doi cac thuoc tinh cua doi tuong
+    date.setDay(10);
+    date.setMonth(12);
+    date.setYear(1092);
+    let day = date.getDay();
+    let month = date.getMonth();
+    let year = date.getYear();
+    alert(day + "/" + month + "/" + year);
+    alert(date.toString());
+</script>
+</body>
+</html>
