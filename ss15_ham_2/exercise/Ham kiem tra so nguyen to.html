@@ -20,13 +20,16 @@
         } else {
             for (let i = 1; i <= input; i++) {
                 if (input % i == 0) {
-                    count += 1;
+                    count ++;
                 }
             }
         }
         if (count == 2) {
             condition = true;
         }
+
+        /////
+
         if (condition) {
             alert (input + " la so nguyen to.");
         } else {

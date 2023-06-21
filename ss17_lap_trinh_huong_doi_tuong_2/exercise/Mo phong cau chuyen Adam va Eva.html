@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>
+    [Bài tập] Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva
+</h2>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+        getAppleWeight() {
+            return this.weight;
+        }
+        setAppleWeight(weight) {
+            return this.weight = weight;
+        }
+        decreaseApple() {
+            if (this.weight > 0) {
+                this.weight--;
+            } else {
+                alert("There is no more apple");
+            }
+        }
+    }
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+        isMale() {
+            if(this.gender == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        getGender() {
+            if (this.isMale()){
+                return "Male";
+            } else {
+                return "Female";
+            }
+        }
+        eat(apple) {
+            if (apple.weight > 0) {
+                apple.weight--;
+                this.weight++;
+            } else {
+                alert("There is no apple left!")
+            }
+
+        }
+        saySomething(name) {
+            return console.log("My name is " + this.name + "and i love " + name);
+
+        }
+        getWeight() {
+            return this.weight;
+        }
+
+        getInfo() {
+            alert("My name is: " + this.name + " and im " + this.gender + ". " + this.weight + " kg.");
+        }
+    }
+    let him = new Human("Adam","Male",70);
+    let she = new Human("Eva","Female",60);
+
+    let apple = new Apple(10);
+
+
+
+</script>
+</body>
+</html>

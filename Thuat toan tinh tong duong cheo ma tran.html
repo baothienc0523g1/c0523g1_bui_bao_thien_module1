@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [
+        [1,2,3],
+        [4,5,6],
+        [9,8,9]
+    ];
+    console.log(matrix(array));
+    function matrix(arr) {
+        let primary = 0;
+        let secondary = 0;
+        let dif;
+
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length; j++) {
+                if (j === i) {
+                 primary += arr[i][j];
+                }
+            }
+        }
+        //i giảm dần, j tăng dần. nhưng tổng của i và j luôn bằng kích cỡ của mảng vì
+        //i và j nằm trên đường chéo
+
+        for (let i = arr.length-1; i >= 0 ; i--) {
+            for (let j = 0; j < arr.length ; j++) {
+                if (j + i === arr.length-1) {
+                    secondary += arr[i][j];
+                }
+            }
+        }
+        // Math.abs là thuật toán trả về giá trị tuyệt đối của 1 biểu thức, chuỗi, biến
+        dif = Math.abs(primary - secondary);
+        return dif;
+    }
+
+
+</script>
+</body>
+</html>
