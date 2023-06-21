@@ -7,110 +7,102 @@
 <body>
 
 <script>
-    class Mobile {
-        name;
-        battery;
-        typingMessage;
-        inbox;
-        sendedBox;
-        status;
-        on;
-        off;
-        charge;
-        newMessage;
-        reciveMessage;
-        sendMessage;
-        inboxCheck;
-        sendedMessage;
 
-        constructor(name, battery, typingMessage, inbox,
-                    sendedBox, status, on, off, charge, newMessage,
-                    reciveMessage, sendMessage, inboxCheck, sendedMessage) {
-            this.name = name;
+    class Mobile {
+        constructor(battery, draft, inbox, outbox, status) {
             this.battery = battery;
-            this.typingMessage = typingMessage;
+            this.draft = draft;
             this.inbox = inbox;
-            this.sendedBox = sendedBox;
+            this.outbox = outbox;
             this.status = status;
-            this.on = on;
-            this.off = off;
-            this.charge = charge;
-            this.newMessage = newMessage;
-            this.reciveMessage = reciveMessage;
-            this.sendMessage = sendMessage;
-            this.inboxCheck = inboxCheck;
-            this.sendedMessage = sendedMessage;
         }
-        getname () {
-            return this.name;
+
+        getBattery() {
+            return this.battery;
         }
-        getbattery () {
-        return this.battery;
-        }
-        gettypingMessage () {
-            return this.typingMessage;
-        }
-        getinbox () {
-            return this.inbox;
-        }
-        getsendedBox () {
-            return this.sendedBox;
-        }
-        getstatus () {
-            if (this.battery == 0) {
-                this.status = false;
-                return this.status;
+        statusCheck() {
+            if (this.status) {
+                alert("Your device is ON!");
+            } else {
+                alert("Your device is OFF!")
             }
-            else {
-                return this.status = true;
+            this.battery--;
+        }
+
+        turnOn() {
+            if (this.status) {
+                alert("Your device is already ON");
+            } else {
+                this.status = true;
+                this.battery--;
             }
         }
-        geton () {
-            return this.on;
-        }
-        getoff () {
-            return this.off;
-        }
-        getcharge () {
-            if (this.battery < 100){
-                this.battery = this.battery + (100 - this.battery);
-                return this.charge;
-            }
-            else {
-                alert("Your battery is full")
+        turnOff() {
+            if (this.status) {
+                alert("Your device is now turn off");
+            } else {
+                alert("Your device is already off")
+                this.battery--;
             }
         }
-        getnewMessage () {
-            this.newMessage = '';
-            return this.newMessage;
+
+        chargeBattery(battery) {
+            this.battery = battery;
         }
-        getreciveMessage () {
-            return this.reciveMessage;
+
+        setMessageDraft(message) {
+            if (this.status) {
+                this.draft.push(message);
+                this.battery--;
+            } else {
+                alert("Your device is off, turn on to use.");
+            }
         }
-        getsendMessage () {
-            this.sendedMessage = new Array();
-            return this.sendedMessage;
+
+        sendMessage(name, message) {
+            if (this.status) {
+                this.outbox.push(message);
+                name.inbox.push(message);
+                this.battery--;
+            } else {
+                alert("Your device is off, turn on to use.");
+            }
         }
-        getinboxCheck () {
-            return this.inboxCheck;
+        getInbox() {
+            if (this.status) {
+                this.battery--;
+                return this.inbox;
+            } else {
+                alert("Your device is off, turn on to use.");
+            }
+
         }
-        getsendedMessage () {
-            return this.sendedMessage;
+        getOutbox() {
+            if (this.status) {
+                this.battery--;
+                return this.outbox;
+            } else {
+                alert("Your device is off, turn on to use.");
+            }
         }
+
+
+
     }
 
-    let nokia = new Mobile ("nokia",100,'','','',true,"on","off","charge",'','','','','')
-    let samsung = new Mobile ("samsung",0,'','','',true,"on","off","charge",'','','','','')
+    let nokia = new Mobile(60, [], [], [], true);
+    let iphone = new Mobile(90, [], [], [], true);
 
+    //nokia gui tin nhan den ip
+    nokia.sendMessage(iphone, "abc");
+    nokia.sendMessage(iphone, "xyz");
+    nokia.sendMessage(iphone, "def");
 
-    console.log(mes1)
-    console.log(nokia.getname());
-
-    // name, battery, typingMessage, inbox,
-    //     sendedBox, status, on, off, charge, newMessage,
-    //     reciveMessage, sendMessage, inboxCheck, sendedMessage
-
-
+    //check pin
+    console.log(nokia.getBattery())
+    console.log(iphone.getBattery())
+    //check inbox
+    console.log(iphone.getInbox())
 </script>
 
 </body>

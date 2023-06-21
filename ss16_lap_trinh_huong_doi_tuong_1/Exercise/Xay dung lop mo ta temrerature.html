@@ -13,6 +13,9 @@
             this.celsius = celsius;
         }
 
+        getCelcis() {
+            return this.celsius
+        }
         fahrenheit() {
             return 9 / 5 * this.celsius + 32 + " f";
         }
@@ -26,7 +29,7 @@
     let temperature = new Temperature(+prompt("Nhap nhiet do vao day"))
     let my_f = temperature.fahrenheit();
     let my_k = temperature.kelvins();
-
+    console.log(temperature.getCelcis())
     alert(my_f);
     alert(my_k);
 </script>
