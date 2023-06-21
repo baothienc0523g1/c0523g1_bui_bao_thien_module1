@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        celsius;
+
+        constructor(celsius) {
+            this.celsius = celsius;
+        }
+
+        fahrenheit() {
+            return 9 / 5 * this.celsius + 32 + " f";
+        }
+
+        kelvins() {
+            return this.celsius + 273.15 + " k";
+        }
+
+    }
+
+    let temperature = new Temperature(+prompt("Nhap nhiet do vao day"))
+    let my_f = temperature.fahrenheit();
+    let my_k = temperature.kelvins();
+
+    alert(my_f);
+    alert(my_k);
+</script>
+</body>
+</html>
