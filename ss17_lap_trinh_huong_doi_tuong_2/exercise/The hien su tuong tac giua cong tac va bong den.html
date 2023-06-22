@@ -5,8 +5,109 @@
     <title>Title</title>
 </head>
 <body>
-<h3>[Bài tập] Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng: công tắc và bóng đèn
+<h3>[Bài tập] Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng:
+    công tắc và bóng đèn
 </h3>
+<table>
+    <tr>
+        <td>
+            <button onclick="turnOn()">Bật đèn</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="turnOff()">Tắt đèn</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="switchButton()">Chuyển đổi trạng thái</button>
+        </td>
+    </tr>
+</table>
 
+
+<script>
+
+
+    class FlashLamp {
+        constructor(status) {
+            this.status = status;
+        }
+
+        getStatus() {
+            return this.status;
+
+        }
+    }
+
+    class SwitchButton {
+        constructor(status) {
+            this.status = status;
+        }
+
+        connectToLamp(lamp) {
+            this.lamp = lamp;
+        }
+
+        turnOn() {
+            if (this.lamp.status == false) {
+                console.log("Đã bật đèn");
+                return this.lamp.status = true
+                    ;
+            } else {
+                console.log("Đèn đã bật sẵn rồi, không thể bật nữa!");
+                return this.lamp.status;
+            }
+        }
+
+        turnOff() {
+            if (this.lamp.status == true) {
+                console.log("Đã tắt đèn");
+                return this.lamp.status = false;
+            } else {
+                console.log("Đèn đã tắt sẵn rồi, bạn không thể tắt một cái đèn chưa bật");
+                return this.lamp.status;
+            }
+        }
+
+        switchButton() {
+            if (this.lamp.status == true) {
+                console.log("Đã tắt đèn");
+                return this.lamp.status = false;
+            } else {
+                console.log("Đã bật đèn");
+                return this.lamp.status = true;
+            }
+        }
+    }
+
+    let flash20k = new FlashLamp(false);
+    let button1 = new SwitchButton(false)
+
+    button1.connectToLamp(flash20k);
+    console.log("Trạng thái hiện tại:" + flash20k.getStatus())
+
+    // console.log(flash20k.getStatus())
+    // button.turnOn();
+    // console.log(flash20k.getStatus())
+    // button.turnOff();
+    // console.log(flash20k.getStatus())
+
+
+    function turnOn() {
+        button1.turnOn();
+    }
+
+    function turnOff() {
+        button1.turnOff();
+    }
+
+    function switchButton() {
+        button1.switchButton();
+    }
+
+
+</script>
 </body>
 </html>
