@@ -19,6 +19,20 @@
         setAppleWeight(weight) {
             return this.weight = weight;
         }
+        isEmpty() {
+            if (this.weight <=0 ) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        decrease() {
+            if (this.isEmpty() == true) {
+                return "Đã hết táo rồi";
+            } else {
+                this.weight--;
+            }
+        }
 
     }
     class Human {
@@ -36,22 +50,22 @@
         }
         getGender() {
             if (this.isMale()){
-                return "Male";
+                return "Nam";
             } else {
-                return "Female";
+                return "Nữ";
             }
         }
         eat(apple) {
             if (apple.weight > 0) {
-                apple.weight--;
+                apple.decrease();
                 this.weight++;
             } else {
-                alert("There is no apple left!")
+                return "Hết táo rồi";
             }
-
         }
+
         saySomething(name) {
-            return console.log("My name is " + this.name + "and i love " + name);
+            return "Tôi tên là " + this.name + " và tôi sống cùng " + name.name;
 
         }
         getWeight() {
@@ -59,16 +73,49 @@
         }
 
         getInfo() {
-            alert("My name is: " + this.name + " and im " + this.gender + ". " + this.weight + " kg.");
+            return "Tên tôi là:  " + this.name + " và tôi là: " + this.gender + ". " + this.weight + " kg.";
         }
     }
-    let him = new Human("Adam","Male",70);
-    let she = new Human("Eva","Female",60);
+    let him = new Human("Adam","Nam",70);
+    let she = new Human("Eva","Nữ",60);
 
-    let apple = new Apple(10);
+    let apple = new Apple(5);
+
+    document.write(she.saySomething(him));
+    document.write("</br>");
+    document.write(him.saySomething(she));
+    document.write("</br>");
+    document.write("</br>");
+    document.write("</br>");
+
+
+    while(apple.isEmpty() == false) {
+        document.write(she.getInfo());
+        document.write("</br>");
+
+        document.write(him.getInfo());
+        document.write("</br>");
 
 
 
+        document.write("Adam ăn táo ");
+        him.eat(apple);
+
+        document.write("Quả táo còn: " + "</br>");
+        document.write((apple.getAppleWeight()) + " đơn vị " + "</br>" );
+        document.write("Cân nặng của Adam là: " + him.getWeight() + " kg.");
+
+        document.write("</br>");
+
+        document.write("Eva ăn táo ");
+        she.eat(apple);
+
+        document.write("Quả táo còn: " + "</br>");
+        document.write((apple.getAppleWeight()) + " đơn vị " + "</br>" );
+        document.write("Cân nặng của Eva là: " + she.getWeight() + " kg.");
+
+        document.write("</br>");
+    }
 </script>
 </body>
 </html>
