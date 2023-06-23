@@ -7,42 +7,69 @@
 <body>
 <h3>[Bài tập] Game đơn giản - di chuyển đối tượng</h3>
 <div id="game"></div>
-<img src="../../pikachu.png" id="myImage" height="300" width="300"/>
+
 <script>
-    //bai nay em chua hoan thanh
 
-  function Hero(image, top, left, size){
-    this.image = image;
-    this.top = top;
-    this.left = left;
-    this.size = size;
+    class Character {
+        constructor(img, top, left, size) {
+            this.img = img;
+            this.top = top;
+            this.left = left;
+            this.size = size;
+        }
 
-    this.getHeroElement = function() {
-      return '<img width="'+ this.size + '"' +
-              ' height="'+ this.size + '"' +
-              ' src="' + this.image +'"' +
-              ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+        getCharacter() {
+            return '<img width ="' + this.size + '"' +
+                ' height="' + this.size + '"' +
+                ' scr="' + this.img + '"' +
+                ' style="top: ' + this.top + 'px; left:' + this.left + 'px;right:' + this.right + 'px;position:absolute;"/>'
+        }
+
+        moveRight() {
+            this.left += 10;
+        }
+
+        moveDown() {
+            this.top += 10;
+        }
+
+        moveLeft() {
+            this.left -= 10;
+        }
+
+        moveUp() {
+            this.top -= 10;
+        }
     }
 
-    this.moveRight = function(){
-      this.left += 20;
-      console.log('ok: ' + this.left);
+    let pikachu = new Character("pikachu.png", 0, 0, 200);
+    let width = window.innerWidth - pikachu.size;
+
+    function start() {
+        if (pikachu.left === 0 && pikachu.top === 0) {
+            width = window.innerWidth - pikachu.size;
+        }
+        if (pikachu.left < window.innerWidth - pikachu.size &&
+            width === window.innerWidth - pikachu.size) {
+            pikachu.moveRight();
+        }
+        if (pikachu.left > window.innerWidth - pikachu.size - 10 &&
+            pikachu.top < window.innerHeight - pikachu.size - 10) {
+            pikachu.moveDown()
+        }
+        if (pikachu.left > 0 && pikachu.top > window.innerHeight - pikachu.size - 10) {
+            pikachu.moveLeft();
+            width--;
+        }
+        if (pikachu.left === 0 && pikachu.top >= 0) {
+            pikachu.moveUp();
+        }
+        document.getElementById('game').innerHTML = pikachu.getCharacter();
+        setTimeout(start, 10)
     }
 
-  }
+    start();
 
-  var hero = new Hero(document.getElementById('myImage'), 20, 30, 200);
-
-  function start(){
-    if(hero.left < window.innerWidth - hero.size){
-      hero.moveRight();
-    }
-    document.getElementById('game').innerHTML = hero.getHeroElement();
-    setTimeout(start, 500)
-  }
-
-  start();
-
-    </script>
+</script>
 </body>
 </html>
