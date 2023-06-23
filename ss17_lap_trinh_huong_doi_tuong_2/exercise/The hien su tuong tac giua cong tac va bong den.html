@@ -83,16 +83,13 @@
     }
 
     let flash20k = new FlashLamp(false);
+
     let button1 = new SwitchButton(false)
 
     button1.connectToLamp(flash20k);
-    console.log("Trạng thái hiện tại:" + flash20k.getStatus())
+    console.log("Trạng thái hiện tại:" + flash20k.getStatus());
 
-    // console.log(flash20k.getStatus())
-    // button.turnOn();
-    // console.log(flash20k.getStatus())
-    // button.turnOff();
-    // console.log(flash20k.getStatus())
+
 
 
     function turnOn() {
