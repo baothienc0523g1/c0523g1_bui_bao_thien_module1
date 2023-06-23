@@ -40,9 +40,10 @@
         turnOff() {
             if (this.status) {
                 alert("Your device is now turn off");
+                this.battery--;
             } else {
                 alert("Your device is already off")
-                this.battery--;
+
             }
         }
 
