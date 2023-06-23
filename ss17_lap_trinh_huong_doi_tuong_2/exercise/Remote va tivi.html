@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>[*Bài tập] Phát triển chương trình sử dụng Remote để điều khiển Tivi
+</h2>
+
+<button onclick="turnOn()">Turn On</button>
+<button onclick="turnOff()">Turn Off</button>
+<button onclick="switchChanel()">Change Chanel</button></br>
+<button onclick="volumeUp()">Volume Up</button>
+<button onclick="volumeDown()">Volume Down</button>
+<script>
+    class Remote {
+        constructor(id) {
+            this.id = id;
+        }
+        connectToTv(tv) {
+            return this.tv = tv;
+        }
+        volumeUp() {
+            if (this.tv.status == true) {
+                console.log(this.tv.volume);
+                return this.tv.volume++;
+            } else {
+                console.log("Bật tv để sử dụng tính năng này.");
+            }
+        }
+        volumeDown() {
+            if (this.tv.status == true) {
+                console.log(this.tv.volume);
+                return this.tv.volume--;
+            } else {
+                console.log("Bật tv để sử dụng tính năng này.");
+            }
+        }
+        setChanel(chanel) {
+            if (this.tv.status == true) {
+                chanel = prompt("Nhập kênh bạn mún chuyển!");
+                return this.tv.chanel = chanel;
+            } else {
+                console.log("Bật tv để sử dụng tính năng này.");
+            }
+
+        }
+        turnOn() {
+            if (this.tv.status == false) {
+                console.log("Đã bật tivi");
+                return this.tv.status = true;
+            } else {
+                return  console.log("Tivi vẫn đang bật");
+            }
+        }
+        turnOff() {
+            if (this.tv.status == true) {
+                console.log("Đã tắt tivi");
+                return this.tv.status = false;
+            } else {
+                return  console.log("Tivi vẫn đang tắt");
+            }
+        }
+
+    }
+    class Television {
+        constructor(chanel, volume, status) {
+            this.chanel = chanel;
+            this.volume = volume;
+            this.status = status;
+        }
+        getVolume() {
+            return this.volume;
+        }
+        getChanel() {
+            if (this.status == "on") {
+                return this.chanel;
+            } else {
+                return "Turn on to use TV";
+            }
+        }
+        getStatus() {
+            return this.status;
+        }
+    }
+
+    let panasonic = new Television("VTV3",50,false);
+    let remote = new Remote(3);
+    remote.connectToTv(panasonic);
+
+    function turnOn() {
+        remote.turnOn();
+    }
+    function turnOff() {
+        remote.turnOff();
+    }
+    function switchChanel() {
+        remote.setChanel();
+    }
+    function volumeUp() {
+        remote.volumeUp();
+    }
+    function volumeDown() {
+        remote.volumeDown();
+    }
+
+
+
+
+</script>
+</body>
+</html>
