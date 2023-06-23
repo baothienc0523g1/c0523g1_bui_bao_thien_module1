@@ -8,105 +8,65 @@
 <h3>[Bài tập] Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng:
     công tắc và bóng đèn
 </h3>
-<table>
-    <tr>
-        <td>
-            <button onclick="turnOn()">Bật đèn</button>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <button onclick="turnOff()">Tắt đèn</button>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <button onclick="switchButton()">Chuyển đổi trạng thái</button>
-        </td>
-    </tr>
-</table>
-
-
 <script>
-
-
-    class FlashLamp {
-        constructor(status) {
-            this.status = status;
+    class ElectricLamp {
+        constructor() {
+        this.status = false;
         }
-
-        getStatus() {
+        getLampStatus() {
             return this.status;
         }
-        lampOff() {
-            if (thi)
+        turnON() {
+            this.status = true;
         }
-    }
-
-    class SwitchButton {
-        constructor(status) {
-            this.status = status;
-        }
-
-        connectToLamp(lamp) {
-            this.lamp = lamp;
-        }
-
-        turnOn() {
-            if (this.lamp.status == false) {
-                console.log("Đã bật đèn");
-                return this.lamp.status = true
-                    ;
-            } else {
-                console.log("Đèn đã bật sẵn rồi, không thể bật nữa!");
-                return this.lamp.status;
-            }
-        }
-
         turnOff() {
-            if (this.lamp.status == true) {
-                console.log("Đã tắt đèn");
-                return this.lamp.status = false;
-            } else {
-                console.log("Đèn đã tắt sẵn rồi, bạn không thể tắt một cái đèn chưa bật");
-                return this.lamp.status;
-            }
-        }
-
-        switchButton() {
-            if (this.lamp.status == true) {
-                console.log("Đã tắt đèn");
-                return this.lamp.status = false;
-            } else {
-                console.log("Đã bật đèn");
-                return this.lamp.status = true;
-            }
+            this.status = false;
         }
     }
 
-    let flash20k = new FlashLamp(false);
-
-    let button1 = new SwitchButton(false)
-
-    button1.connectToLamp(flash20k);
-    console.log("Trạng thái hiện tại:" + flash20k.getStatus());
-
-
-
-
-    function turnOn() {
-        button1.turnOn();
+    class PowerButton {
+        constructor() {
+            this.status = false;
+            this.lamp = null;
+        }
+        getButtonStatus() {
+            return this.status;
+        }
+        getLamp() {
+            return this.lamp;
+        }
+        connectToLamp(electricLamp) {
+            this.lamp = electricLamp;
+        }
+        switchOn() {
+            this.status = true;
+            this.lamp.turnON();
+        }
+        switchOff() {
+            this.status = false;
+            this.lamp.turnOff();
+        }
     }
 
-    function turnOff() {
-        button1.turnOff();
-    }
+    let flashLamp = new ElectricLamp();
+    let button = new PowerButton();
 
-    function switchButton() {
-        button1.switchButton();
-    }
+    console.log("Lamp status = " + flashLamp.getLampStatus());
+    console.log("Lamp status = " + button.getButtonStatus());
+
+    button.connectToLamp(flashLamp);
+    console.log("Lamp status = " + flashLamp.getLampStatus());
+    console.log("Lamp status = " + button.getButtonStatus());
 
 
+    button.switchOn();
+    console.log("Lamp status = " + flashLamp.getLampStatus());
+    console.log("Lamp status = " + button.getButtonStatus());
+
+    button.switchOff();
+    console.log("Lamp status = " + flashLamp.getLampStatus());
+    console.log("Lamp status = " + button.getButtonStatus());
 </script>
+
 </body>
 </html>
