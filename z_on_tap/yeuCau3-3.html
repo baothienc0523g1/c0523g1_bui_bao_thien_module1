@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let string1 = [5, 2, 5, 6];
+  let string2 = [6, 3, 4, 5];
+
+
+
+  function maxFraction(a,b) {
+    let pos = 0;
+    let max = a[0]/b[0];
+    for (let i = 1; i < a.length; i++) {
+        if((a[i]/b[i]) > max) {
+          pos = i;
+        }
+    } alert("Vị trí có phân số lớn nhất là: " + pos);
+  }
+
+  maxFraction(string1,string2);
+
+
+
+</script>
+</body>
+</html>

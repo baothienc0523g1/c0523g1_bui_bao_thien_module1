@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>CodeGym Cafe</h1>
+<h2>Menu</h2>
+
+<form>
+    <label for="option">Menu
+        <select name="order" id="option" style="width: 150px">
+            <option value="0"></option>
+            <option value="Cafe">Cafe</option>
+            <option value="Cam vắt">Cam vắt</option>
+            <option value="Nước ép cà rốt">Nước ép cà rốt</option>
+            <option value="Nước ép cà chua">Nước ép cà chua</option>
+            <option value="Nước lọc">Nước lọc</option>
+            <option value="Nước dừa">Nước dừa</option>
+        </select></label>
+    <label>Số lượng
+        <select id="number" name="Số lượng">
+            <option value="0"></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select></label>
+    <br>
+    <br>
+    <button type="reset">Cancle Order</button>
+    <br>
+    <br>
+</form>
+<button onclick="order()">Thành tiền</button>
+<br>
+<div id="myDiv"></div>
+<br>
+<button onclick="confirm()">Thanh toán</button>
+
+<script>
+    let menu = ["Cafe", "Cam vắt", "Nước ép cà rốt", "Nước ép cà chua", "Nước lọc", "Nước dừa"];
+    let price = [15, 30, 25, 25, 10, 12]
+
+    function order() {
+        let input = document.getElementById("option").value;
+        let number = document.getElementById("number").value;
+        let pos = 0;
+        let result = 0;
+
+        if (input == 0 || number == 0) {
+            alert("Vui lòng chọn thức uống và chọn đúng số lượng");
+        } else {
+
+
+            for (let i = 0; i < menu.length; i++) {
+                if (menu[i] == input) {
+                    pos = i;
+                }
+            }
+            for (let j = 0; j < price.length; j++) {
+                if (pos == j) {
+                    result = number * price[j];
+                }
+            }
+            document.getElementById("myDiv").innerText = "Tổng thanh toán: " + result + " 000 đ."
+        }
+
+    }
+
+    function confirm() {
+        let input = document.getElementById("option").value;
+        let number = document.getElementById("number").value;
+
+        if (input != 0 || number != 0) {
+            alert("Đồ uống của bạn sẽ được giao ngay trong giây lát!");
+        } else {
+        }
+    }
+</script>
+</body>
+</html>

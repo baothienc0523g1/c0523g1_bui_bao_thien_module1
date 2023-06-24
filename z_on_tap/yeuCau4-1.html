@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>aifsAF AFSbhf ASFIUf</title>
+</head>
+<body>
+<div id="before"></div>
+<div id="after"></div>
+<script>
+    function nameFixed() {
+        //nhập vào chuỗi ngẫu nhiên
+        let string = prompt("Nhập vào tên của bạn (không dấu): ");
+        document.getElementById("before").innerText = "Chuỗi ban đầu có dạng: " + string;
+        //chuyển chuỗi trên thành lowerCase sau đó cho vào mảng bằng split,
+        //split sẽ bỏ khoảng trắng trong chuỗi để chuyển thành mảng
+        let stringConverter = string.toLowerCase().trim()
+        let array = stringConverter.split(" ");
+        console.log(array);
+
+    //
+    //     for (let i = 0; i < array.length; i++) {
+    //         for (let j = 0; j < array.length; j++) {
+    //             if (i == j) {
+    //                 array[i][j].toUpperCase();
+    //             }
+    //         }
+    //     }
+    // console.log(array);
+    }
+
+
+    nameFixed()
+</script>
+
+</body>
+</html>

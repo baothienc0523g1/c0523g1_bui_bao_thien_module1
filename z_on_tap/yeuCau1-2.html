@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 2: Viết chương trình kiểm tra một ký tự -->
+<!--trong bảng chữ cái tiếng anh là nguyên âm hay phụ âm. -->
+<!--Ký tự là bất kỳ được nhập từ bàn phím. Các ký tự nguyên âm bao gồm: -->
+<!--'o', 'u', 'i', 'a', 'e' hoặc 'O', 'U', 'I', 'A', 'E'-->
+<input id="input" type="text" placeholder="Nhập vào 1 ký tự bất kỳ" maxlength="1">
+<br>
+<button onclick="check()">Check</button>
+<script>
+    function check() {
+        let input = document.getElementById("input").value.toLowerCase();
+
+        switch (input) {
+
+            case 'o':
+            case 'u':
+            case 'i':
+            case 'a':
+            case 'e':
+                alert("Đây là một nguyên âm");
+                break;
+            default:
+                alert("Đây là một phụ âm");
+                break;
+        }
+    }
+</script>
+</body>
+</html>

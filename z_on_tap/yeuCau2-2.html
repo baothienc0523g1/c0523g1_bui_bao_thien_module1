@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  let n;
+  do{
+    h = +prompt("Nhap vao chieu cao tam giac");
+    if (n <= 0) {
+      alert("Chieu cao cua tam giac phai > 0");
+    }
+  }
+  while(h <= 0);
+
+  for (let i = 0; i < h; i++) {
+    for (let j = 0; j < 2*h; j++) {
+      if (Math.abs(h - j) <= (i - 1)) {
+        document.write("*");
+      } else {
+          document.write("&nbsp&nbsp")
+      }
+    }
+    document.write("</br>");
+  }
+</script>
+</body>
+</html>

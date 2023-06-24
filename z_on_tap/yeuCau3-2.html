@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let m;
+    let n;
+    do{
+        m = +prompt("Nhập vào số lượng phần tử của mảng 1");
+        if (m <= 0) {
+            alert("số lượng phần tử của 1 mảng phải lớn hơn 0.")
+        }
+    } while(m <= 0);
+    do{
+        n = +prompt("Nhập vào số lượng phần tử của mảng 2");
+        if (n <= 0) {
+            alert("số lượng phần tử của 1 mảng phải lớn hơn 0.")
+        }
+    } while(n <= 0);
+
+    let stringM = [];
+    let stringN = [];
+
+    for (let i = 1; i <= m; i++) {
+        stringM.push(+prompt("Nhập vào phần tử thứ " + i + " của mảng 1"));
+    }
+    for (let i = 1; i <= n; i++) {
+        stringN.push(+prompt("Nhập vào phần tử thứ " + i + " của mảng 2"));
+    }
+
+    console.log(stringM);
+    console.log(stringN);
+
+    let resultString = [];
+    for (let i = 0; i < stringM.length; i++) {
+            if (stringN[i] != stringM[i]) {
+                resultString.push(stringN[i]);
+            }
+        }
+
+    console.log(resultString);
+
+
+</script>
+
+</body>
+</html>
