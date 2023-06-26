@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let str = "abcabcxyz";
+ function convertString(string) {
+      let arrayNew = [];
+      let stringConvert = string.trim().split("");
+      for (let i = 0; i < stringConvert.length; i++) {
+          if (arrayNew.indexOf(stringConvert[i]) === -1) {
+              arrayNew.push(stringConvert[i]);
+          }
+      }
+     console.log(arrayNew);
+  }
+
+  convertString(str)
+</script>
+</body>
+</html>

@@ -2,22 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>aifsAF AFSbhf ASFIUf</title>
+    <title></title>
 </head>
 <body>
 <div id="before"></div>
 <div id="after"></div>
+<div id="mostLongText"></div>
 <script>
+
     function nameFixed() {
         let string = prompt("Nhập vào tên của bạn (không dấu): ");
         document.getElementById("before").innerText = "Chuỗi ban đầu có dạng: " + string;
+
         let stringConverter = string.toLowerCase().trim().split(" ");
+
         for (let i = 0; i < stringConverter.length; i++) {
-            stringConverter[i][0] = stringConverter[i][0].toUpperCase();
+            //tách mỗi phần tử trở thành 1 mảng nhỏ hơn
+            let arrTemp = stringConverter[i].split('');
+
+            //cho mảng nhỏ hơn ở index = 0 thành uppercase
+            arrTemp[0] = arrTemp[0].toUpperCase();
+
+            //sau khi thành upper case, dùng join để nối các phần tử của mảng lại thành 1 chuỗi
+            //như ban đầu.
+            stringConverter[i] = arrTemp.join('').trim();
+            //(' ' trong join là ký tự đc gọi để phân cách các phần tử, nếu bỏ trống
+            //như dưới đây thì mặc định sẽ là dấu phẩy)
         }
-        console.log(stringConverter);
+
+        let mostLong = stringConverter[0].length;
+        for (let j = 1; j < stringConverter.length; j++) {
+            if (stringConverter[j].length > mostLong) {
+                mostLong = stringConverter[j];
+            }
+        }
+        document.getElementById("mostLongText").innerText = "Từ dài nhất trong chuỗi trên là: " + mostLong;
+        document.getElementById("after").innerText = "Sau khi chuẩn hóa, chuỗi có dạng : " + stringConverter.join(" ");
     }
-    nameFixed()
+    nameFixed();
 </script>
 
 </body>

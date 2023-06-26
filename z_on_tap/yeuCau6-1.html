@@ -19,11 +19,6 @@
             </td>
         </tr>
     </table>
-    <table>
-
-        <div id="myTable"></div>
-
-    </table>
 </form>
 <table border="1" style="border: 1px" cellpadding="3" cellspacing="0">
     <tr>
@@ -33,6 +28,7 @@
         <th>Email</th>
         <th>Ngày sinh</th>
     </tr>
+
 </table>
 </body>
 <script>
@@ -43,14 +39,10 @@
         let email = +prompt("Nhập Email của học viên.");
         let ngaySinh = +prompt("Nhập ngày sinh của học viên.");
 
-        document.getElementById("myTable").innerText = "<tr><td>" + maSo + "</td> +
-        <td>" + ten + "</td>
-        <td>" + lop + "</td>
-        <td>" + email + "</td>
-        <td>" + ngaySinh + "</td>
-        ";
-    }
+        
 
+        document.getElementById("myTable").innerText = "<tr><td>" + maSo + "</td></tr>";
+    }
     function suaThongTin() {
 
     }
