@@ -10,7 +10,7 @@
 <div id="myDiv1"></div>
 <div id="myDiv2"></div>
 <script>
-    ///Nhap mang tu ban phim
+    //Nhap mang tu ban phim
     let m;
     let n;
     do {
@@ -40,6 +40,8 @@
 
     document.getElementById("myDiv").innerText = "Mảng nhập vào có dạng " + matrix;
 
+
+
     ///// Ham tim va hien thi so nguyen to trong mang
     function checkPrime(array) {
         let primeArray = [];
@@ -47,17 +49,20 @@
         for (let i = 0; i < array.length; i++) {
             for (let j = 0; j < array[i].length; j++) {
                 for (let n = 2; n < array[i][j]; n++) {
-                    if (array[i][j] % n !== 0) {
+                    if (array[i][j] % n === 0) {
                         count++;
-                        }
                     }
+                }
+                if (count === 0) {
+                    primeArray.push(array[i][j]);
                 }
             }
         }
-        document.getElementById("myDiv2").innerText = "Số lượng số nguyên tố là " + primeArray.length;
-        document.getElementById("myDiv3").innerText = "Số nguyên tố là " + primeArray;
+        document.getElementById("myDiv1").innerText = "Số lượng số nguyên tố là " + primeArray.length;
+        document.getElementById("myDiv2").innerText = "Số nguyên tố là " + primeArray;
     }
 
+    checkPrime(matrix);
 </script>
 </body>
 </html>
