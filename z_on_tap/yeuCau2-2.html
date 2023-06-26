@@ -16,9 +16,9 @@
   }
   while(h <= 0);
 
-  for (let i = 0; i < h; i++) {
-    for (let j = 0; j < 2*h; j++) {
-      if (Math.abs(h - j) <= (i - 1)) {
+  for (let row = 1; row < h; row++) {
+    for (let col = 1; col < 2*h; col++) {
+      if (Math.abs(h - col) <= (row - 2)) {
         document.write("*");
       } else {
           document.write("&nbsp&nbsp")

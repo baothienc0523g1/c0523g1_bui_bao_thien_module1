@@ -6,17 +6,17 @@
 </head>
 <body>
 <script>
-    let n;
+    let h;
     do {
-        n = +prompt("Nhap vao chieu cao tam giac");
-        if (n <= 0) {
+        h = +prompt("Nhap vao chieu cao tam giac");
+        if (h <= 0) {
             alert("Chieu cao cua tam giac phai > 0");
         }
-    } while (n <= 0);
+    } while (h <= 0);
 
-    for (let i = 1; i <= n; i++) {
-        for (let j = 1; j < n * 2; j++) {
-            if (Math.abs(n - j) == (i - 1) || i === n) {
+    for (let row = 1; row <= h; row++) {
+        for (let col = 1; col < h * 2; col++) {
+            if (Math.abs(h - col) == (col - 1) || row === h) {
                 document.write("*");
             } else {
                 document.write("&nbsp&nbsp");

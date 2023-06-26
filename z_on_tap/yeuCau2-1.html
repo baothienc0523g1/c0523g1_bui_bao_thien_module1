@@ -7,18 +7,18 @@
 <body>
 <div id="mySpan"></div>
 <script>
-    let n;
+    let h;
     do {
-        n = +prompt("Nhap vao chieu cao cua tam giac");
-        if (n <= 0) {
+        h = +prompt("Nhap vao chieu cao cua tam giac");
+        if (h <= 0) {
             alert("Chieu cao cua tam giac phai > 0");
         }
     }
-    while (n <= 0);
+    while (h <= 0);
 
-    for (let i = 0; i < n; i++) {
-        for (let j = 0; j < n; j++) {
-            if (j == 0 || i == (n - 1) || i == j) {
+    for (let row = 1; row <= h; row++) {
+        for (let col = 1; col <= h; col++) {
+            if (col == 1 || row == h || row == col) {
                 document.write("*");
             } else {
                 document.write("&nbsp&nbsp");
