@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="myDiv"></div>
+<script>
+    let m;
+    let n;
+    do {
+        m = +prompt("Nhập vào số hàng của mảng m*n");
+        if (m <= 1) {
+            alert("Số hàng của mảng 2 chiều phải > 1");
+        }
+    }
+    while (m <= 1);
+    do {
+        n = +prompt("Nhập vào số cột của mảng m*n");
+        if (n <= 1) {
+            alert("Số cột của mảng 2 chiều phải > 1");
+        }
+    }
+    while (n <= 1);
+
+    let matrix = [];
+
+
+    for (let i = 0; i < m; i++) {
+        matrix[i] = []
+        for (let j = 0; j < n; j++) {
+            matrix[i].push(+prompt(("Nhập vào phần tử thứ ") + (j + 1) + " hàng thứ " + (i + 1)));
+        }
+    }
+
+    document.getElementById("myDiv").innerText = "Mảng nhập vào có dạng " + matrix;
+
+    function maxMin(array) {
+        let max = array[0][0];
+        let min = array[0][0];
+        let result = new Array(2);
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (array[i][j] > max) {
+                    max = array[i][j];
+                }
+                if (array[i][j] < min) {
+                    min = array[i][j];
+                }
+            }
+        }
+        result.push(max, min);
+        alert("Giá trị lớn nhất và nhỏ nhất của mảng này là: " + result.join(" "));
+    }
+    maxMin(matrix);
+</script>
+</body>
+</html>

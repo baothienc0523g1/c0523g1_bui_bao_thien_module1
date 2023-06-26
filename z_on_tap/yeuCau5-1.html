@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+  : Viết hàm tính tổng các số chẵn trong ma trận có
+  kích thước m*n.
+  Với m, n là các số nhập từ bàn phím.
+</p>
+<span id="myDiv"></span>
+<span id="myDiv2"></span>
+<script>
+
+  let m;
+  let n;
+  do {
+    m = +prompt("Nhập vào số hàng của ma trận m*n");
+    if (m < 3) {
+      alert("Số hàng của ma trận phải > 2");
+    }
+  }
+  while (m < 3);
+  do {
+    n = +prompt("Nhập vào số cột của ma trận m*n");
+    if (n < 3) {
+      alert("Số cột của ma trận phải > 2");
+    }
+  }
+  while (n < 3);
+
+  let matrix = [];
+  ;
+
+  for (let i = 0; i < m; i++) {
+    matrix[i] = []
+    for (let j = 0; j < n; j++) {
+      matrix[i].push(+prompt(("Nhập vào phần tử thứ ") + (j + 1) + " hàng thứ " + (i + 1)));
+    }
+  }
+
+  document.getElementById("myDiv").innerText = "Ma trận nhập vào có dạng " + matrix;
+
+  function sumOfEvenNumber(string) {
+    let sum = 0;
+    for (let i = 0; i < string.length; i++) {
+      for (let j = 0; j < string[i].length; j++) {
+        if (string[i][j] % 2 === 0) {
+          sum += string[i][j];
+        }
+      }
+    }
+    document.getElementById("myDiv2").innerText = "Tổng các số chẵn trong ma trận là " + sum;
+  }
+
+  sumOfEvenNumber(matrix);
+</script>
+</body>
+</html>

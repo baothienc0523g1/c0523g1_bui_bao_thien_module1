@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <td>
+                <button onclick="themHocVien()">Thêm mới học viên</button>
+            </td>
+            <td>
+                <button onclick="suaThongTin()">Sửa thông tin học viên</button>
+            </td>
+            <td>
+                <button onclick="xoaHocVien()">Xóa học viên</button>
+            </td>
+        </tr>
+    </table>
+    <table>
+
+        <div id="myTable"></div>
+
+    </table>
+</form>
+<table border="1" style="border: 1px" cellpadding="3" cellspacing="0">
+    <tr>
+        <th>Mã học viên</th>
+        <th>Tên</th>
+        <th>Lớp</th>
+        <th>Email</th>
+        <th>Ngày sinh</th>
+    </tr>
+</table>
+</body>
+<script>
+    function themHocVien() {
+        let maSo = +prompt("Nhập mã số học viên.");
+        let ten = +prompt("Nhập tên học viên.");
+        let lop = +prompt("Nhập tên lớp học viên.");
+        let email = +prompt("Nhập Email của học viên.");
+        let ngaySinh = +prompt("Nhập ngày sinh của học viên.");
+
+        document.getElementById("myTable").innerText = "<tr><td>" + maSo + "</td> +
+        <td>" + ten + "</td>
+        <td>" + lop + "</td>
+        <td>" + email + "</td>
+        <td>" + ngaySinh + "</td>
+        ";
+    }
+
+    function suaThongTin() {
+
+    }
+
+    function xoaHocVien() {
+
+    }
+</script>
+</html>

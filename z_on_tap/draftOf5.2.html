@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h2>Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.</h2>
+<body>
+<div id="myDiv"></div>
+<div id="myDiv1"></div>
+<div id="myDiv2"></div>
+<script>
+    ///Nhap mang tu ban phim
+    let m;
+    let n;
+    do {
+        m = +prompt("Nhập vào số hàng của mảng m*n");
+        if (m <= 1) {
+            alert("Số hàng của mảng 2 chiều phải > 1");
+        }
+    }
+    while (m <= 1);
+    do {
+        n = +prompt("Nhập vào số cột của mảng m*n");
+        if (n <= 1) {
+            alert("Số cột của mảng 2 chiều phải > 1");
+        }
+    }
+    while (n <= 1);
+
+    let matrix = [];
+
+
+    for (let i = 0; i < m; i++) {
+        matrix[i] = []
+        for (let j = 0; j < n; j++) {
+            matrix[i].push(+prompt(("Nhập vào phần tử thứ ") + (j + 1) + " hàng thứ " + (i + 1)));
+        }
+    }
+
+    document.getElementById("myDiv").innerText = "Mảng nhập vào có dạng " + matrix;
+
+    ///// Ham tim va hien thi so nguyen to trong mang
+    function checkPrime(array) {
+        let primeArray = [];
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                for (let n = 2; n < array[i][j]; n++) {
+                    if (array[i][j] % n !== 0) {
+                        count++;
+                        }
+                    }
+                }
+            }
+        }
+        document.getElementById("myDiv2").innerText = "Số lượng số nguyên tố là " + primeArray.length;
+        document.getElementById("myDiv3").innerText = "Số nguyên tố là " + primeArray;
+    }
+
+</script>
+</body>
+</html>

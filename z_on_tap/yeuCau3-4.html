@@ -5,80 +5,55 @@
     <title>Title</title>
 </head>
 <body>
-<h1>CodeGym Cafe</h1>
-<h2>Menu</h2>
-
-<form>
-    <label for="option">Menu
-        <select name="order" id="option" style="width: 150px">
-            <option value="0"></option>
-            <option value="Cafe">Cafe</option>
-            <option value="Cam vắt">Cam vắt</option>
-            <option value="Nước ép cà rốt">Nước ép cà rốt</option>
-            <option value="Nước ép cà chua">Nước ép cà chua</option>
-            <option value="Nước lọc">Nước lọc</option>
-            <option value="Nước dừa">Nước dừa</option>
-        </select></label>
-    <label>Số lượng
-        <select id="number" name="Số lượng">
-            <option value="0"></option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-        </select></label>
-    <br>
-    <br>
-    <button type="reset">Cancle Order</button>
-    <br>
-    <br>
-</form>
-<button onclick="order()">Thành tiền</button>
-<br>
-<div id="myDiv"></div>
-<br>
-<button onclick="confirm()">Thanh toán</button>
-
 <script>
-    let menu = ["Cafe", "Cam vắt", "Nước ép cà rốt", "Nước ép cà chua", "Nước lọc", "Nước dừa"];
-    let price = [15, 30, 25, 25, 10, 12]
 
-    function order() {
-        let input = document.getElementById("option").value;
-        let number = document.getElementById("number").value;
-        let pos = 0;
-        let result = 0;
+    let order;
+    let total = 0;
+    let menu = ['Cafe (15 000)','Cam vắt( 25 000)', 'Nước ép cà rốt (20 000)', 'Nước ép cà chua (20 000)', 'Nước lọc (10 000)', 'Nước dừa (12 000)'];
+    let flag;
 
-        if (input == 0 || number == 0) {
-            alert("Vui lòng chọn thức uống và chọn đúng số lượng");
-        } else {
+    do {
+        order = +prompt("Menu: \n 1.Cafe \n 2.Cam vắt \n 3.Nước ép cà rốt \n 4.Nước ép cà chua \n 5.Nước lọc \n 6.Nước dừa \n 7. Cancle");
+        let number = 0;
 
-
-            for (let i = 0; i < menu.length; i++) {
-                if (menu[i] == input) {
-                    pos = i;
-                }
-            }
-            for (let j = 0; j < price.length; j++) {
-                if (pos == j) {
-                    result = number * price[j];
-                }
-            }
-            document.getElementById("myDiv").innerText = "Tổng thanh toán: " + result + " 000 đ."
+        if(order === 7) {
+            flag = confirm("Bạn muốn hủy gọi nước?");
         }
-
+        if(flag === true) {
+            alert("Cảm ơn quý khách.");
+        break;
+        }
+        switch (order) {
+            case 1:
+                number = +prompt(`${menu[0]} với số lượng `);
+                total += number * 15000;
+                break;
+            case 2:
+                number = +prompt(`${menu[1]} với số lượng `);
+                total += number * 25000;
+                break;
+            case 3:
+                number = +prompt(`${menu[2]} với số lượng `);
+                total += number * 20000;
+                break;
+            case 4:
+                number = +prompt(`${menu[3]} với số lượng `);
+                total += number * 20000;
+                break;
+            case 5:
+                number = +prompt(`${menu[4]} với số lượng `);
+                total += number * 10000;
+                break;
+            case 6:
+                number = +prompt(`${menu[5]} với số lượng `);
+                total += number * 12000;
+                break;
+        }
     }
+    while(order < 7 || flag === false);
 
-    function confirm() {
-        let input = document.getElementById("option").value;
-        let number = document.getElementById("number").value;
-
-        if (input != 0 || number != 0) {
-            alert("Đồ uống của bạn sẽ được giao ngay trong giây lát!");
-        } else {
-        }
+    if (total > 0) {
+        alert("Số tiền bạn cần thanh toán là: " + total + "đ");
     }
 </script>
 </body>
