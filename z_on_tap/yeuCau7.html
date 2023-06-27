@@ -4,22 +4,157 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-
 <body>
-<table>
-    <tr>
-        <th><img src="logo.png" alt="" style="height: 50px"></th>
-        <th>Hệ thống quản lý bài tập Case Study module 1</th>
-    </tr>
-    <tr>
-        <td>Bài tập 1</td>
-        <td><select>
 
-        </select></td>
-    </tr>
-</table>
+<h2><img src="logo.png" alt="" style="height: 50px"></h2>
+<h2>Hệ thống quản lý bài tập Case Study module 1</h2>
+    <table>
+        <tr>
+            <td>Yêu Cầu 1</td>
+            <td><select id="select1">
+                <option value="0"></option>
+                <option value="1-1">Bài 1</option>
+                <option value="1-2">Bài 2</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Yêu Cầu 2</td>
+            <td><select id="select2">
+                <option value="0"></option>
+                <option value="2-1">Bài 1</option>
+                <option value="2-2">Bài 2</option>
+                <option value="2-3">Bài 3</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Yêu Cầu 3</td>
+            <td><select id="select3">
+                <option value="0"></option>
+                <option value="3-1">Bài 1</option>
+                <option value="3-2">Bài 2</option>
+                <option value="3-3">Bài 3</option>
+                <option value="3-4">Bài 4</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Yêu Cầu 4</td>
+            <td><select id="select4">
+                <option value="0"></option>
+                <option value="4-1">Bài 1</option>
+                <option value="4-2">Bài 2</option>
+                <option value="4-3">Bài 3</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Yêu Cầu 5</td>
+            <td><select id="select5">
+                <option value="0"></option>
+                <option value="5-1">Bài 1</option>
+                <option value="5-2">Bài 2</option>
+                <option value="5-3">Bài 3</option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <td>Yêu Cầu 6</td>
+            <td><select id="select6">
+                <option value="0"></option>
+                <option value="6">Yêu cầu 6</option>
+            </select></td>
+        </tr>
+    </table>
+    <!-- ở button này em có thắc mắc là: em muốn khi sự kiện onclick xảy ra thì nó sẽ gọi 2 hàm-->
+    <!--là submit() và reset(): onclick="submit(), reset()". Hàm submit sẽ chuyển trang còn hàm-->
+    <!--reset sẽ chuyển value của các select về = 0 để người dùng chọn lại thì có được không hay
+    mình phải tạo 2 nút riêng a.-->
+    <button onclick="submit()">Submit</button>
 
 <script>
+    function submit() {
+        let input1 = document.getElementById("select1");
+        switch (input1.value) {
+            case "1-1":
+                window.open("https://github.com/baothienc0523g1/c0523g1_bui_bao_thien_module1/blob/main/z_on_tap/yeuCau1-1.html", "target=_blank");
+                break;
+            case "1-2":
+                window.open("https://github.com/baothienc0523g1/c0523g1_bui_bao_thien_module1/blob/main/z_on_tap/yeuCau1-2.html", "target=_blank");
+                break;
+        }
+        let input2 = document.getElementById("select2");
+        switch (input2.value) {
+            case "2-1":
+                window.open("https://github.com/baothienc0523g1/c0523g1_bui_bao_thien_module1/blob/main/z_on_tap/yeuCau2-1.html", "target=_blank");
+                break;
+            case "2-2":
+                window.open("https://github.com/baothienc0523g1/c0523g1_bui_bao_thien_module1/blob/main/z_on_tap/yeuCau2-2.html", "target=_blank");
+                break;
+            case "2-3":
+                window.open("https://github.com/baothienc0523g1/c0523g1_bui_bao_thien_module1/blob/main/z_on_tap/yeuCau2-3.html", "target=_blank");
+                break;
+        }
+        ;
+        let input3 = document.getElementById("select3");
+        switch (input3.value) {
+            case "3-1":
+                window.open("https://github.com/baothienc0523g1/c0523g1_bui_bao_thien_module1/blob/main/z_on_tap/yeuCau3-1.html", "target=_blank");
+                break;
+            case "3-2":
+                window.open("https://github.com/baothienc0523g1/c0523g1_bui_bao_thien_module1/blob/main/z_on_tap/yeuCau3-2.html", "target=_blank");
+                break;
+            case "3-3":
+                window.open("https://github.com/baothienc0523g1/c0523g1_bui_bao_thien_module1/blob/main/z_on_tap/yeuCau3-3.html", "target=_blank");
+                break;
+            case "3-4":
+                window.open("https://github.com/baothienc0523g1/c0523g1_bui_bao_thien_module1/blob/main/z_on_tap/yeuCau3-4.html", "target=_blank");
+                break;
+        }
+        ;
+        let input4 = document.getElementById("select4");
+        switch (input4.value) {
+            case "4-1":
+                window.open("https://github.com/baothienc0523g1/c0523g1_bui_bao_thien_module1/blob/main/z_on_tap/yeuCau4-1.html", "target=_blank");
+                break;
+            case "4-2":
+                window.open("https://github.com/baothienc0523g1/c0523g1_bui_bao_thien_module1/blob/main/z_on_tap/yeuCau4-2.html", "target=_blank");
+                break;
+            case "4-3":
+                window.open("https://github.com/baothienc0523g1/c0523g1_bui_bao_thien_module1/blob/main/z_on_tap/yeuCau4-3.html", "target=_blank");
+                break;
+        }
+        ;
+        let input5 = document.getElementById("select5");
+        switch (input5.value) {
+            case "5-1":
+                window.open("https://github.com/baothienc0523g1/c0523g1_bui_bao_thien_module1/blob/main/z_on_tap/yeuCau5-1.html", "target=_blank");
+                break;
+            case "5-2":
+                window.open("https://github.com/baothienc0523g1/c0523g1_bui_bao_thien_module1/blob/main/z_on_tap/yeuCau5-2.html", "target=_blank");
+                break;
+            case "5-3":
+                window.open("https://github.com/baothienc0523g1/c0523g1_bui_bao_thien_module1/blob/main/z_on_tap/yeuCau5-3.html", "target=_blank");
+                break;
+        }
+        let input6 = document.getElementById("select6");
+        switch (input6.value) {
+            case "6":
+                window.open("https://github.com/baothienc0523g1/c0523g1_bui_bao_thien_module1/blob/main/z_on_tap/yeuCau6.html", "target=_blank");
+                break;
+        }
+    }
+
+    // function reset() {
+    //     let value1 = document.getElementById("select1").value;
+    //     let value2 = document.getElementById("select2").value;
+    //     let value3 = document.getElementById("select3").value;
+    //     let value4 = document.getElementById("select4").value;
+    //     let value5 = document.getElementById("select5").value;
+    //
+    //     if ((value1,value2,value3,value4,value5) !=== 0) {
+    //        let (value1,value2,value3,value4,value5) = 0;
+    //     }
+    //
+    // }
+
 </script>
 
 </body>
