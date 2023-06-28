@@ -5,44 +5,46 @@
     <title>Title</title>
 </head>
 <body>
+<div id="MangA"></div>
+<div id="MangB"></div>
+<div id="MangC"></div>
 <script>
-    let m;
-    let n;
+    let a;
+    let b;
     do{
-        m = +prompt("Nhập vào số lượng phần tử của mảng 1");
-        if (m <= 0) {
+        a = +prompt("Nhập vào số lượng phần tử của mảng 1");
+        if (a <= 0) {
             alert("số lượng phần tử của 1 mảng phải lớn hơn 0.")
         }
-    } while(m <= 0);
+    } while(a <= 0);
     do{
-        n = +prompt("Nhập vào số lượng phần tử của mảng 2");
-        if (n <= 0) {
+        b = +prompt("Nhập vào số lượng phần tử của mảng 2");
+        if (b <= 0) {
             alert("số lượng phần tử của 1 mảng phải lớn hơn 0.")
         }
-    } while(n <= 0);
+    } while(b <= 0);
 
-    let stringM = [];
-    let stringN = [];
+    let arrayA = [];
+    let arrayB = [];
 
-    for (let i = 1; i <= m; i++) {
-        stringM.push(+prompt("Nhập vào phần tử thứ " + i + " của mảng 1"));
+    for (let i = 1; i <= a; i++) {
+        arrayA.push(+prompt("Nhập vào phần tử thứ " + i + " của mảng A"));
     }
-    for (let i = 1; i <= n; i++) {
-        stringN.push(+prompt("Nhập vào phần tử thứ " + i + " của mảng 2"));
+    for (let i = 1; i <= b; i++) {
+        arrayB.push(+prompt("Nhập vào phần tử thứ " + i + " của mảng B"));
     }
+    document.getElementById("MangA").innerHTML = "Mảng A có dạng: " + arrayA;
+    document.getElementById("MangB").innerHTML = "Mảng B có dạng: " + arrayB;
 
-    console.log(stringM);
-    console.log(stringN);
-
-    let resultString = [];
-    for (let i = 0; i < stringM.length; i++) {
-            if (stringN[i] != stringM[i]) {
-                resultString.push(stringN[i]);
+    let resultArray = [];
+    for (let i = 0; i < arrayB.length; i++) {
+            if (arrayB[i] !== arrayA[i]) {
+                resultArray.push(arrayB[i]);
             }
         }
+    result = resultArray.sort();
 
-    console.log(resultString);
-
+    document.getElementById("MangC").innerHTML = "Mảng chứa các phần tử chỉ có ở B sau khi sắp xếp có dạng: " + result;
 
 </script>
 

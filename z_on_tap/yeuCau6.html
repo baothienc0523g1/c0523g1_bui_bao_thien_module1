@@ -4,51 +4,82 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+    button {
+        color: green;
+    }
+</style>
 <body>
-<form>
-    <table>
-        <tr>
-            <td>
-                <button onclick="themHocVien()">Thêm mới học viên</button>
-            </td>
-            <td>
-                <button onclick="suaThongTin()">Sửa thông tin học viên</button>
-            </td>
-            <td>
-                <button onclick="xoaHocVien()">Xóa học viên</button>
-            </td>
-        </tr>
-    </table>
-</form>
-<table border="1" style="border: 1px" cellpadding="3" cellspacing="0">
-    <tr>
-        <th>Mã học viên</th>
-        <th>Tên</th>
-        <th>Lớp</th>
-        <th>Email</th>
-        <th>Ngày sinh</th>
-    </tr>
-
-</table>
+<div id="result"></div>
+<!--<table>-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th>Mã học viên</th>-->
+<!--        <th>Tên</th>-->
+<!--        <th>Lớp</th>-->
+<!--        <th>Email</th>-->
+<!--        <th>Ngày seen</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    -->
+<!--    </tbody>-->
+<!--</table>-->
 </body>
 <script>
-    function themHocVien() {
-        let maSo = +prompt("Nhập mã số học viên.");
-        let ten = +prompt("Nhập tên học viên.");
-        let lop = +prompt("Nhập tên lớp học viên.");
-        let email = +prompt("Nhập Email của học viên.");
-        let ngaySinh = +prompt("Nhập ngày sinh của học viên.");
-
-
-
-        document.getElementById("myTable").innerText = "<tr><td>" + maSo + "</td></tr>";
-    }
-    function suaThongTin() {
-
+    class HocVien {
+        constructor(maSo, ten, lop, email, ngaySinh) {
+            this.maSo = maSo;
+            this.ten = ten;
+            this.lop = lop;
+            this.email = email;
+            this.ngaySinh = ngaySinh;
+        }
     }
 
-    function xoaHocVien() {
+    let hocVien1 = new HocVien("HV-001", "Hoai Linh", "C0523G1", "hoailinh@gmail.com", "01-01-2000");
+    let hocVien2 = new HocVien("HV-002", "Tran Thanh", "C0523G1", "thanhtran@gmail.com", "01-01-2000");
+    let hocVien3 = new HocVien("HV-003", "Nguyen Ngoc Ngan", "C0523G1", "ngannguyen@gmail.com", "01-01-2000");
 
+    let lopc0523g1 = [hocVien1, hocVien2, hocVien3];
+
+    function hienThiHocVien() {
+        let textHTML = ` <table border="1px">
+            <thead>
+            <tr>
+                <th>Mã học viên</th>
+                <th>Tên</th>
+                <th>Lớp</th>
+                <th>Email</th>
+                <th>Ngày seen</th>
+            </tr>
+            </thead>
+            <tbody>`
+
+        for (let index = 0; index < lopc0523g1.length; index++) {
+            textHTML +=
+                `<tr>` +
+                `<td>` + lopc0523g1[index].maSo + `</td>` +
+                `<td>` + lopc0523g1[index].ten + `</td>` +
+                `<td>` + lopc0523g1[index].lop + `</td>` +
+                `<td>` + lopc0523g1[index].email + `</td>` +
+                `<td>` + lopc0523g1[index].ngaySinh + `</td>` +
+                `<td><button>Delete</button></td>` +
+                `</tr>`;
+        }
+
+        textHTML += `</tbody>
+        </table>`;
+        document.getElementById("result").innerHTML = textHTML;
     }
+
+
+
+    hienThiHocVien();
+
+
 </script>
 </html>
