@@ -14,30 +14,26 @@
         let string = prompt("Nhập vào tên của bạn (không dấu): ");
         document.getElementById("before").innerText = "Chuỗi ban đầu có dạng: " + string;
 
-        let stringConverter = string.toLowerCase().trim().split(" ");
+        let stringConverter = string.split(" ");
+        let newArr =[];
 
         for (let i = 0; i < stringConverter.length; i++) {
-            //tách mỗi phần tử trở thành 1 mảng nhỏ hơn
-            let arrTemp = stringConverter[i].split('');
-
-            //cho mảng nhỏ hơn ở index = 0 thành uppercase
-            arrTemp[0] = arrTemp[0].toUpperCase();
-
-            //sau khi thành upper case, dùng join để nối các phần tử của mảng lại thành 1 chuỗi
-            //như ban đầu.
-            stringConverter[i] = arrTemp.join('').trim();
-            //(' ' trong join là ký tự đc gọi để phân cách các phần tử, nếu bỏ trống
-            //như dưới đây thì mặc định sẽ là dấu phẩy)
+            let temp = stringConverter[i].trim();
+            temp = temp.charAt(0).toUpperCase() + temp.slice(1).toLowerCase();
+            if (temp !== "") {
+                newArr.push(temp);
+            }
         }
 
-        let mostLong = stringConverter[0].length;
-        for (let j = 1; j < stringConverter.length; j++) {
-            if (stringConverter[j].length > mostLong) {
-                mostLong = stringConverter[j];
+
+        let mostLong = newArr[0].length;
+        for (let j = 1; j < newArr.length; j++) {
+            if (newArr[j].length > mostLong) {
+                mostLong = newArr[j];
             }
         }
         document.getElementById("mostLongText").innerText = "Từ dài nhất trong chuỗi trên là: " + mostLong;
-        document.getElementById("after").innerText = "Sau khi chuẩn hóa, chuỗi có dạng : " + stringConverter.join(" ");
+        document.getElementById("after").innerText = "Sau khi chuẩn hóa, chuỗi có dạng : " + newArr.join(' ');
     }
     nameFixed();
 </script>
