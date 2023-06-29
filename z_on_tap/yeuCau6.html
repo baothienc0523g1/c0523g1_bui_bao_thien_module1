@@ -4,82 +4,100 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<style>
-    table {
-        border-collapse: collapse;
-    }
-    button {
-        color: green;
-    }
-</style>
 <body>
-<div id="result"></div>
-<!--<table>-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--        <th>Mã học viên</th>-->
-<!--        <th>Tên</th>-->
-<!--        <th>Lớp</th>-->
-<!--        <th>Email</th>-->
-<!--        <th>Ngày seen</th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    -->
-<!--    </tbody>-->
-<!--</table>-->
+
+
+<!--bài này em xin phép hoàn thành trễ deadline đến ngày 31/6 ạ.-->
+
+
+<h1>Quản lý thông tin học viên</h1>
+<button onclick="themHocVien()">Thêm học viên</button>
+<button onclick="suaHocVien()">Sửa thông tin học viên</button>
+<button onclick="xoaHocVien()">Xóa học viên</button>
+<table id="bangHocVien">
+    <thead>
+    <tr>
+        <th>Mã học viên</th>
+        <th>Tên</th>
+        <th>Lớp</th>
+        <th>Email</th>
+        <th>Ngày sinh</th>
+        <th>Module</th>
+    </tr>
+    </thead>
+    <tbody id="phanThanBangHocVien">
+    </tbody>
+</table>
 </body>
 <script>
+
+    //1. Tạo class học viên
     class HocVien {
-        constructor(maSo, ten, lop, email, ngaySinh) {
-            this.maSo = maSo;
+        constructor(maHV, ten, lop, email, ngaySinh, module) {
+            this.maHV = maHV;
             this.ten = ten;
             this.lop = lop;
             this.email = email;
             this.ngaySinh = ngaySinh;
+            this.module = module;
         }
     }
 
-    let hocVien1 = new HocVien("HV-001", "Hoai Linh", "C0523G1", "hoailinh@gmail.com", "01-01-2000");
-    let hocVien2 = new HocVien("HV-002", "Tran Thanh", "C0523G1", "thanhtran@gmail.com", "01-01-2000");
-    let hocVien3 = new HocVien("HV-003", "Nguyen Ngoc Ngan", "C0523G1", "ngannguyen@gmail.com", "01-01-2000");
+    //2. Khai báo mảng rỗng để chứa object học viên
+    let danhSachHocVien = [];
 
-    let lopc0523g1 = [hocVien1, hocVien2, hocVien3];
-
+    //3. Hiển thị học viên ở HTML\
     function hienThiHocVien() {
-        let textHTML = ` <table border="1px">
-            <thead>
-            <tr>
-                <th>Mã học viên</th>
-                <th>Tên</th>
-                <th>Lớp</th>
-                <th>Email</th>
-                <th>Ngày seen</th>
-            </tr>
-            </thead>
-            <tbody>`
+        let phanThanBangHocVien = document.getElementById("phanThanBangHocVien");
+        //tạo ô rỗng để chèn thông tin mới tránh bị đè thông tin.
+        phanThanBangHocVien.innerHTML = '';
 
-        for (let index = 0; index < lopc0523g1.length; index++) {
-            textHTML +=
-                `<tr>` +
-                `<td>` + lopc0523g1[index].maSo + `</td>` +
-                `<td>` + lopc0523g1[index].ten + `</td>` +
-                `<td>` + lopc0523g1[index].lop + `</td>` +
-                `<td>` + lopc0523g1[index].email + `</td>` +
-                `<td>` + lopc0523g1[index].ngaySinh + `</td>` +
-                `<td><button>Delete</button></td>` +
-                `</tr>`;
+        //duyệt object rồi chèn cột và hàng vào table
+        for (let i = 0; i < danhSachHocVien.length; i++) {
+            let hocVien = dachSachHocVien[i];
+
+            //cái dòng này nó dùng insertRow để chèn vào chỗ có id phanThanBangHocVien
+            let dong = phanThanBangHocVien.insertRow(i);
+            let oMaHV = dong.insertCell(0);
+            oMaHV.innerHTML = hocVien.maHV;
+            let oTen = dong.insertCell(1);
+            oTen.innerHTML = hocVien.ten;
+            let oLop = dong.insertCell(2);
+            oLop.innerHTML = hocVien.lop;
+            let oEmail = dong.insertCell(3);
+            oEmail.innerHTML = hocVien.email;
+            let oNgaySinh = dong.insertCell(4);
+            oNgaySinh.innerHTML = hocVien.ngaySinh;
+            let oModule = dong.insertCell(5);
+            oModule.innerHTML = hocVien.module;
+            //line 53->line 65: lấy thông tin của object, chèn cell vào row, sau nó
+            // innerHTML ra các thông tin của object.
+            //Trong phần này có thể tạo luôn nút Edit và Delete ra table.
         }
-
-        textHTML += `</tbody>
-        </table>`;
-        document.getElementById("result").innerHTML = textHTML;
     }
 
+    //4. Nút thêm học viên mới
 
+    function themHocVien() {
+        //HV-0001: để gợi ý định dạng cho người dùng nhập vào mã HV đúng theo định dạng
+        let maHv = prompt("Nhập mã học viên: ", "HV-0001");
+        let ten = prompt("Nhập tên học viên: ");
+        let lop = prompt("Nhập lớp: ");
+        let email = prompt("Nhập email: ");
+        let ngaySinh = prompt("Ngày sinh (dd/mm/yyyy)");
 
-    hienThiHocVien();
+        let hocvien = new HocVien(maHv, ten, lop, email, ngaySinh);
+        danhSachHocVien.push(hocvien);
+        hienThiHocVien();
 
+    }
 
+    function suaHocVien() {
+        let maHVFix = prompt("Nhập vào mã học viên cần sửa", "HV-");
+        for (let i = 0; i < danhSachHocVien.length; i++) {
+            let hocVien = danhSachHocVien[i];
+            if (hocVien.maHV === maHVFix)
+        }
+    }
 </script>
 </html>
