@@ -93,10 +93,18 @@
     }
 
     function suaHocVien() {
-        let maHVFix = prompt("Nhập vào mã học viên cần sửa", "HV-");
+        let maHV = prompt("Nhập vào mã học viên cần sửa", "HV-");
         for (let i = 0; i < danhSachHocVien.length; i++) {
             let hocVien = danhSachHocVien[i];
-            if (hocVien.maHV === maHVFix)
+            if (hocVien.maHV === maHV) {
+                hocVien.ten = prompt('Nhập tên học viên', hocVien.ten);
+                hocVien.lop = prompt('Nhập tên học viên', hocVien.lop);
+                hocVien.email = prompt('Nhập tên học viên', hocVien.email);
+                hocVien.ngaySinh = prompt('Nhập tên học viên', hocVien.ngaySinh);
+                hocVien.module = prompt('Nhập tên học viên', hocVien.module);
+                hienThiHocVien();
+                return;
+            }
         }
     }
 </script>
